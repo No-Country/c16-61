@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Header from "./ui/Header/Header";
+import Footer from "./ui/Footer/Footer";
+
+//estilos globales 
+import './ui/global.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div style={{display:"flex", flexDirection:"column", height:"100vh"}}>
-          <header style={{height:"200px", backgroundColor:"red", width:"100%"}}> Header</header>
+          <Header/>
           {children}
-          <footer style={{height:"200px", backgroundColor:"blue", width:"100%"}}> Footer </footer>
+          <Footer/>
         </div>
       </body>
     </html>

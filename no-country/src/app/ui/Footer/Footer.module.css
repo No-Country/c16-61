@@ -1,0 +1,11 @@
+.foot {
+    position: absolute;
+    bottom: 0;
+
+    height: 200px;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+
