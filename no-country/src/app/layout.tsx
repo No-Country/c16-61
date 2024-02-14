@@ -21,11 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div style={{display:"flex", flexDirection:"column", height:"100vh"}}>
           <Header/>
-          {children}
+            {children}
           <Footer/>
-        </div>
       </body>
     </html>
   );
