@@ -1,13 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { servicio } from '../../../backend/servicios'
- 
-type ResponseData = {
-  message: string
-}
- 
-export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
 
-  const respuesta = servicio()
+import { searchOrCreateUser } from '../../../backend/controllers/user'
+ 
 
-  res.status(200).json({ message: respuesta })
+ 
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+
+  if (req.method === 'POST') {
+    
+     const result = await searchOrCreateUser(req.body)
+
+     res.status(200).json({ result })
+  } else {
+    // Handle any other HTTP method
+  }
+
+  
 }

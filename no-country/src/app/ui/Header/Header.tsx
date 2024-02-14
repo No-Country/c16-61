@@ -1,12 +1,12 @@
 import styles from './Header.module.css'
-
-
+import Image from 'next/image'
+import instagramLogo from "../../../../images/instagram.svg"
 export default function Header() {
 
     return (
         <nav className={styles.navbar} >
             <div>
-                <img src="" alt="" />
+                <Image src={instagramLogo} alt=""  priority={true}/>
                 <p>Compralo</p>
             </div>
 
