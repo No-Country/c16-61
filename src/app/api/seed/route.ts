@@ -4,20 +4,20 @@ import { type CreatePropertyRating } from '@/properties-raking'
 
 export async function GET() {
   await prisma.user.deleteMany() // DELETE ALL users
-  await prisma.propertyRating.deleteMany()
   await prisma.property.deleteMany()
+  await prisma.propertyRating.deleteMany()
 
   // Crear usuarios de prueba
   await prisma.user.createMany({
     data: [
       {
-        id: '618c01ea-fc81-4ac3-a6b3-bf07d87e607e',
+        id: '218da11a-3790-4040-b1f0-d5e6de9d5250',
         email: 'admin@mail.com',
         name: 'Administrador',
         password: '123456'
       },
       {
-        id: '218da11a- 3790 - 4040 - b1f0 - d5e6de9d5250',
+        id: '618c01ea-fc81-4ac3-a6b3-bf07d87e607e',
         email: 'user1@mail.com',
         name: 'Usuario 1',
         password: '123456'
@@ -30,7 +30,7 @@ export async function GET() {
   await prisma.property.createMany({
     data: [
       {
-        id: '2e0944b0-e9e3-41f9-b450-89bcac180143',
+        id: '26d0a232-63c5-4cd4-a388-a047580e95f7',
         coveredArea: 120.5,
         totalLandArea: 200.0,
         bathrooms: 2,
@@ -42,7 +42,7 @@ export async function GET() {
         nearbyBusStops: ['Parada 1', 'Parada 2']
       },
       {
-        id: '26d0a232-63c5-4cd4-a388-a047580e95f7',
+        id: '2e0944b0-e9e3-41f9-b450-89bcac180143',
         coveredArea: 95.0,
         totalLandArea: 150.0,
         bathrooms: 1,
