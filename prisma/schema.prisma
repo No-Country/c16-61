@@ -32,6 +32,7 @@ model Property {
   bathrooms      Int // cantidad de baños
   bedrooms       Int // cantidad de dormitorios
   price          Float // precio del inmueble
+  img            String? // imagen de la propiedad
   amenities      String[] // comodidades
   services       String[] // servicios
   nearbyPlaces   String[] // lugares de cercanía

@@ -3,9 +3,10 @@ import prisma from '@/libs/prisma'
 import { type CreatePropertyRating } from '@/properties-raking'
 
 export async function GET() {
-  await prisma.user.deleteMany() // DELETE ALL users
-  await prisma.property.deleteMany()
+  // DELETE ALL data
   await prisma.propertyRating.deleteMany()
+  await prisma.user.deleteMany()
+  await prisma.property.deleteMany()
 
   // Crear usuarios de prueba
   await prisma.user.createMany({
@@ -36,6 +37,7 @@ export async function GET() {
         bathrooms: 2,
         bedrooms: 3,
         price: 250000,
+        img: 'https://repstaticneu.azureedge.net/images/2003/L/WM/Large/7a9d1c70-1d58-45c4-a4ce-a2d1345f3759-4161ac81-1a33-461d-9cf2-f9e03859b301.jpg',
         amenities: ['Jardín', 'Piscina'],
         services: ['Agua corriente', 'Luz', 'Gas natural', 'Internet'],
         nearbyPlaces: ['Escuela Primaria', 'Estación de Servicio'],
@@ -48,6 +50,7 @@ export async function GET() {
         bathrooms: 1,
         bedrooms: 2,
         price: 180000,
+        img: 'https://repstaticneu.azureedge.net/images/2003/L/WM/Large/4c4cbe3f-3211-457a-9ceb-359c25838c96-d85b11c2-dfeb-4d60-94b1-e38aeccb4502.jpg',
         amenities: ['Terraza'],
         services: ['Agua corriente', 'Luz', 'Internet'],
         nearbyPlaces: ['Supermercado', 'Parque Central'],
