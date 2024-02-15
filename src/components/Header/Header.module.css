@@ -1,13 +1,3 @@
-.navbar {
-  height: 100px;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-
 .navbar p {
   color: white;
   padding: 0.5rem 3rem
@@ -34,16 +24,3 @@
   align-items: center;
 }
 
-.buttonNew button {
-  all: unset;
-  padding: 0.5rem 3rem;
-  background: #e65b7c;
-  color: #fff;
-  border-radius: .3rem;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, .3) 0 5px 10px;
-}
-
-.buttonNew button:hover {
-  background: #d35472
-}

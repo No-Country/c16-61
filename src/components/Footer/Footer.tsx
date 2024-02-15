@@ -5,8 +5,8 @@ import twitterLogo from '../../../public/images/twitter.svg'
 
 export function Footer() {
   return (
-    <footer className={styles.foot} >
-      <div className={styles.footConteiner} >
+    <footer className={styles.footer} >
+      <div className={styles.Conteiner} >
         <div className={styles.infOptions} >
           <p>Login</p>
           <p>Mi perfil</p>
