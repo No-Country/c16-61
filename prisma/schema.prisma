@@ -11,8 +11,50 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  email    String  @unique
-  name     String?
-  password String
+  id        String    @id @default(uuid())
+  email     String    @unique
+  name      String
+  password  String
+  role      String?   @default("user")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+
+  // Se agrega una relación uno a muchos con PropertyRating
+  Rating PropertyRating[]
+
+  @@map("users")
+}
+
+model Property {
+  id             String    @id @default(uuid())
+  coveredArea    Float // m² cubiertos
+  totalLandArea  Float // m² totales de terreno
+  bathrooms      Int // cantidad de baños
+  bedrooms       Int // cantidad de dormitorios
+  price          Float // precio del inmueble
+  amenities      String[] // comodidades
+  services       String[] // servicios
+  nearbyPlaces   String[] // lugares de cercanía
+  nearbyBusStops String[] // paradas de colectivo cercanas
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime?
+
+  // Se agrega una relación uno a muchos con PropertyRating
+  Rating PropertyRating[]
+
+  @@map("properties")
+}
+
+model PropertyRating {
+  id         String    @id @default(uuid())
+  rating     Int // La calificación dada por el usuario
+  comment    String? // Un comentario opcional sobre la propiedad
+  propertyId String // Esto establece una relación con el modelo Property
+  property   Property  @relation(fields: [propertyId], references: [id])
+  userId     String // Esto establece una relación con el modelo User
+  user       User      @relation(fields: [userId], references: [id])
+  createdAt  DateTime  @default(now()) // Fecha de creación de la calificación
+  updatedAt  DateTime?
+
+  @@map("property_ratings")
 }
