@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row
+
+}
+
+.description{
+    width: 50%;
+    height: 292px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
