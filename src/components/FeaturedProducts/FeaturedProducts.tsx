@@ -1,22 +1,21 @@
 "use client"
 
 import Carousel from 'react-bootstrap/Carousel';
-
+import { CarouselCard } from '@/UI/carouselCard';
+import style from "./FeaturedProducts.module.css"
 export default function FeaturedProducts() {
 
-  const testArray = [{ nombre: "producto destacado 1 ", precio: 1000, src: "./house1.jpg" },
-                     { nombre: "producto destacado 2 ", precio: 2000, src: "./house2.jpg" }, 
-                     { nombre: "producto destacado 3 ", precio: 3000, src: "./house3.jpg" }]
+  const testArray = [{ nombre: "Alquiler destacado 1 ", precio: 1000, src: "./house1.jpg", habitacion: 3, baños: 2 },
+                     { nombre: "Alquiler destacado 2 ", precio: 2000, src: "./house2.jpg", habitacion: 2, baños: 1 }, 
+                     { nombre: "Alquiler destacado 3 ", precio: 3000, src: "./house3.jpg", habitacion: 4, baños: 2 },]
                      
   return (
-    <main style={{ width: "100%", display: "flex", justifyContent: "center", overflow: "hidden" }}>
-      <Carousel style={{ width: "80%", height: "292px" }}>
+    <main className={style.container}>
+      <Carousel className={style.containerCarousel} onClick={( )=>{console.log("click");
+      }} style={{ width: "80%", height: "292px" }}>
         {testArray.map((item, index) => (
           <Carousel.Item key={index}>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <img src={item.src} alt="slides" style={{ width: "50%", height: "292px" }} />
-              <div style={{ width: "50%", height: "292px" }}> description </div>
-            </div>
+            <CarouselCard item={item}></CarouselCard>
           </Carousel.Item>
         ))}
       </Carousel>
