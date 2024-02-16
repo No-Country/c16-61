@@ -1,5 +1,15 @@
+"use client"
+
+import { useState } from 'react';
 import styles from "./NavBar.module.css"
+import { SideBar } from '../SideBar/SideBar';
+
 export function NavBar() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
     return (
         <nav className={styles.navbar} >
         <div className={styles.titleContainer}>
@@ -8,8 +18,9 @@ export function NavBar() {
         </div>
 
         <div className={styles.buttonNew} >
-          <button>Ingresar</button>
+          <button onClick={handleShow}>Ingresar</button>
         </div>
+        <SideBar show={show} handleClose={handleClose} className={styles.offCanvas}/>
       </nav>
     )
   }

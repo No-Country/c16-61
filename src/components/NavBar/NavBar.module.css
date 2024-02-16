@@ -1,38 +1,38 @@
 .navbar {
-    height: 60px;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.titleContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .title {
-    width: 100%;
-    color: white;
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  color: white;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonNew button {
-    all: unset;
-    padding: 0.4rem 2.5rem;
-    background: #e65b7c;
-    color: #fff;
-    border-radius: .3rem;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, .3) 0 5px 10px;
+  all: unset;
+  padding: 0.4rem 2.5rem;
+  background: #e65b7c;
+  color: #fff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
 }
 
 .buttonNew button:hover {
-    background: #d35472
+  background: #d35472;
 }
