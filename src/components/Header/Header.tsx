@@ -1,11 +1,10 @@
 import styles from './Header.module.css'
-import { SearchBar } from '@/components'
 import { NavBar } from '../NavBar/NavBar'
 
-export function Header() {
+export function Header(): JSX.Element {
   return (
-    <section className={styles.conteiner} >
+    <header className={styles.conteiner} >
       <NavBar></NavBar>
-    </section>
+    </header>
   )
 }

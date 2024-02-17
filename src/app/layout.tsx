@@ -7,7 +7,7 @@ import { Footer, Header } from '@/components'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'No Country Props',
+  title: 'Imomubiales',
   description: 'Explora propiedades exclusivas con No Country Props. Encuentra, evalúa y guarda tus favoritos en nuestra plataforma inmobiliaria digitalizada.'
 }
 

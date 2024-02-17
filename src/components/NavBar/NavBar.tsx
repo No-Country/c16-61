@@ -1,26 +1,28 @@
 "use client"
 
-import { useState } from 'react';
-import styles from "./NavBar.module.css"
 import { SideBar } from '../SideBar/SideBar';
+import styles from "./NavBar.module.css"
 
-export function NavBar() {
+
+import { useState } from 'react';
+
+export function NavBar(): JSX.Element {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
     return (
-        <nav className={styles.navbar} >
+      <nav className={styles.navbar} >
         <div className={styles.titleContainer}>
-          <img src="" alt="" />
+          <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
           <p className={styles.title}>Compralo</p>
         </div>
 
         <div className={styles.buttonNew} >
           <button onClick={handleShow}>Ingresar</button>
         </div>
-        <SideBar show={show} handleClose={handleClose} className={styles.offCanvas}/>
+        <SideBar show={show} handleClose={handleClose} />
       </nav>
     )
   }

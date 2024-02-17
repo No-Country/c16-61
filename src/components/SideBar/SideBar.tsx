@@ -1,7 +1,11 @@
 import { Offcanvas } from 'react-bootstrap';
 import styles from "./SideBar.module.css";
 
-export function SideBar(props) {
+type SideBarProps = {
+  show: boolean;
+  handleClose: () => void;
+}
+export function SideBar(props: SideBarProps) {
   return (
     <>
       <Offcanvas style={{width: "40%"}}show={props.show} onHide={props.handleClose} placement='end'>
