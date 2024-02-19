@@ -3,21 +3,29 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { CarouselCard } from '@/UI/carouselCard';
 import style from "./FeaturedProducts.module.css"
-export default function FeaturedProducts(): JSX.Element {
 
-  const testArray = [{ nombre: "Alquiler destacado 1 ", precio: 1000, src: "./house1.jpg", habitacion: 3, baños: 2 },
-                     { nombre: "Alquiler destacado 2 ", precio: 2000, src: "./house2.jpg", habitacion: 2, baños: 1 }, 
-                     { nombre: "Alquiler destacado 3 ", precio: 3000, src: "./house3.jpg", habitacion: 4, baños: 2 },]
+import { useRouter } from 'next/navigation'
+import { createContext, useContext } from 'react';
+
+
+
+
+export default function FeaturedProducts({testArray}): JSX.Element {
+  
+
+  const router = useRouter()
                      
   return (
-    <main className={style.container}>
-      <Carousel className={style.containerCarousel} style={{ width: "80%", height: "292px", marginBottom: "60px" }}>
-        {testArray.map((item, index) => (
-          <Carousel.Item key={index}>
-            <CarouselCard item={item}></CarouselCard>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </main>
+
+      <main className={style.container}>
+        <Carousel className={style.containerCarousel} >
+          {testArray.map((item, index) => (
+            <Carousel.Item key={index} onClick={()=>{ router.push(`/product/${item.id}`)}}>
+              <CarouselCard item={item}></CarouselCard>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </main>
+
   )
 }

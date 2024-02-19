@@ -16,7 +16,7 @@ export function NavBar(): JSX.Element {
       <nav className={styles.navbar} >
         <div className={styles.titleContainer}>
           <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
-          <p className={styles.title}>Compralo</p>
+          <p className={styles.title}>Imomubiales</p>
         </div>
 
         <div className={styles.buttonNew} >
