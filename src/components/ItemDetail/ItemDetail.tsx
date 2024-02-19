@@ -3,6 +3,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import style from './ItemDetail.module.css'
 
+import { FeaturedProductsContext } from "@/app/page";
+import { useContext } from "react";
+import { useParams } from "next/navigation";
+
 export default function ItemDetail() {
 
   const testArray = useContext(FeaturedProductsContext);
