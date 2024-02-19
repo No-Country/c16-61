@@ -30,6 +30,7 @@ export default function ItemDetail() {
   })
 
   console.log(item);
+  const {src,rating,nearbyBusStop,nearbyPlaces,coverArea,habitacion,baños,precio,nombre} = item
   
   
   return (
