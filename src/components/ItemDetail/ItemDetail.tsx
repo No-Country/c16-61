@@ -36,7 +36,7 @@ export default function ItemDetail() {
   return (
    <article className={style.containerCard} >
       <Card className={style.card}>
-        <Card.Img className={style.photoDetail} variant="left" width={400} height={400} alt="casa" src='https://img.freepik.com/vector-gratis/plantilla-pegatina-mini-casa-aislada_1308-60687.jpg' />
+        <Card.Img className={style.photoDetail} variant="left" width={400} height={400} alt="casa" src={src} />
         <Card.Body>
           <Card.Title>{nombre} </Card.Title>
           <Card.Text className={style.icons} >

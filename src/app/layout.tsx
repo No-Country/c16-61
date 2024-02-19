@@ -24,7 +24,9 @@ export default function RootLayout({
           <Header />
 
           <AppWrapper>
-            {children}
+            <main style={{minHeight:"80vh"}}>
+              {children}
+            </main>
           </AppWrapper>
 
           <Footer />

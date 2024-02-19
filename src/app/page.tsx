@@ -42,13 +42,13 @@ export default function HomePage(): JSX.Element {
 
   return (
 
-    <main>
+    <div>
       <section className={styles.title} >
         <h1>Inmobiliaria</h1>
         <SearchBar />
       </section>
       <FeaturedProducts testArray={context.testArray} />
-    </main>
+    </div>
 
 
   )
