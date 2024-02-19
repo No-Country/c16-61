@@ -3,19 +3,22 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import style from './ItemDetail.module.css'
 
-import { FeaturedProductsContext } from "@/app/page";
-import { useContext } from "react";
+
+import { useAppContext } from "@/app/context";
 import { useParams } from "next/navigation";
 
 export default function ItemDetail() {
 
-  const testArray = useContext(FeaturedProductsContext);
+  const context = useAppContext();
   const id = useParams().id
   const idNumber = Number(id)
   
-  const item = testArray.find((item) => {    
+  const item = context.testArray.find((item) => {    
     return item.id == idNumber
   })
+
+  console.log(item);
+  
   
   return (
    <article className={style.containerCard} >
