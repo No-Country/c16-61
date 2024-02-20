@@ -1,4 +1,6 @@
 import styles from "./MyData.module.css"
+import { CustomButton } from "@/UI/button/Button"
+import Form from 'react-bootstrap/Form';
 
 export default function MyData({changesShow}): JSX.Element {
 
@@ -6,26 +8,46 @@ export default function MyData({changesShow}): JSX.Element {
       <div className={styles.container}>
         <h4 className={styles.title}>Mis Datos</h4>
         <div className={styles.containerInput}>
-            <label htmlFor="text"> Nombre</label>
-            <input type="text" placeholder="Nombre" />
+            <Form.Label htmlFor="inputName">Nombre</Form.Label>
+                <Form.Control
+                type="text"
+                id="inputName"
+                placeholder="Nombre"
+                />
         </div>
         <div className={styles.containerInput}>
-            <label htmlFor="email"> Email</label>
-            <input type="email" placeholder="Nombre" />
+            <Form.Label htmlFor="inputEmail">Email</Form.Label>
+                <Form.Control
+                type="email"
+                id="inputEmail"
+                placeholder="name@example.com"
+                />
         </div>
         <div className={styles.containerInput}>
-            <label htmlFor="password"> Contraseña Actual</label>
-            <input type="password"  />
+            <Form.Label htmlFor="inputPassword5">Contraseña Actual</Form.Label>
+                <Form.Control
+                type="password"
+                id="inputPassword5"
+                placeholder="******"
+                />
         </div>
         <div className={styles.containerInput}>
-            <label htmlFor="password"> Nueva Contraseña</label>
-            <input type="password"  />
+            <Form.Label htmlFor="inputPassword5">Nueva Contraseña</Form.Label>
+                <Form.Control
+                type="password"
+                id="inputPassword5"
+                placeholder="******"
+                />
         </div>
         <div className={styles.containerInput}>
-            <label htmlFor="password"> Repetir Nueva Contraseña</label>
-            <input type="password"  />
+            <Form.Label htmlFor="inputPassword5">Repetir Contraseña</Form.Label>
+                <Form.Control
+                type="password"
+                id="inputPassword5"
+                placeholder="******"
+                />
         </div>
-        <button onClick={() => changesShow("NoUser")}>Volver</button>
+        <CustomButton className={styles.button} onClick={() => changesShow("NoUser")} text="Volver"></CustomButton>
       </div>
     )
   }

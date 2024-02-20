@@ -1,7 +1,7 @@
 "use client"
 
 import Carousel from 'react-bootstrap/Carousel';
-import { CarouselCard } from '@/UI/carouselCard';
+import { CarouselCard } from '@/UI/carouselCard/carouselCard';
 import style from "./FeaturedProducts.module.css"
 
 import { useRouter } from 'next/navigation'
