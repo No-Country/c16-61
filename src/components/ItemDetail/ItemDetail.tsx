@@ -40,9 +40,12 @@ export default function ItemDetail() {
   return (
    <article className={style.containerCard} >
       <Card className={style.card}>
-        <Card.Img className={style.photoDetail} variant="left" width={400} height={400} alt="casa" src={src} />
-        <Card.Body>
-          <Card.Title>{nombre} </Card.Title>
+        <div className={style.contenedorPhoto} >
+          <Card.Img className={style.photoDetail} variant="left"  alt="casa" src={src} />
+        </div>
+        <Card.Body className={style.cardBody} >
+          <Card.Title className={style.title} >{nombre} </Card.Title>
+          <h3>${precio} </h3>
           <Card.Text className={style.icons} >
             
             <img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bathfilled.svg?alt=media&token=78b7c5a4-289c-4c87-b0e4-f395f3c31add" alt="baños" />
@@ -64,7 +67,8 @@ export default function ItemDetail() {
             <span>{rating}</span> 
             
           </Card.Text>
-          <Button variant="primary">Añadir a favoritos</Button>
+          <Button className={style.buttons} variant="primary">Añadir a favoritos</Button>
+          <Button className={style.buttons} variant="primary">Puntuar</Button>
         </Card.Body>
       </Card>
     </article>
