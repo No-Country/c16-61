@@ -28,14 +28,8 @@
   height: 50px;
 }
 
-.buttonNew button {
-  all: unset;
-  padding: 0.4rem 2.5rem;
-  background: #e65b7c;
-  color: #fff;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
+.buttonNew{
+  width: 150px;
 }
 
 .buttonNew button:hover {

@@ -1,6 +1,7 @@
 "use client"
 
 import { SideBar } from '../SideBar/SideBar';
+import { CustomButton } from '@/UI/button/Button';
 import styles from "./NavBar.module.css"
 
 
@@ -18,9 +19,8 @@ export function NavBar(): JSX.Element {
           <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
           <p className={styles.title}>Imomubiales</p>
         </div>
-
-        <div className={styles.buttonNew} >
-          <button onClick={handleShow}>Ingresar</button>
+        <div >
+          <CustomButton className={styles.buttonNew} text="Iniciar Sesión" variant="primary" onClick={handleShow} ></CustomButton>
         </div>
         <SideBar show={show} handleClose={handleClose} />
       </nav>

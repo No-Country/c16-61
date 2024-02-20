@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import style from './ItemDetail.module.css'
 
-
 import { useAppContext } from "@/app/context";
 import { useParams } from "next/navigation";
 interface Product {
@@ -30,11 +29,8 @@ export default function ItemDetail() {
     return item.id == idNumber
   })
 
+  console.log(item);
   const {src,rating,nearbyBusStop,nearbyPlaces,coverArea,habitacion,baños,precio,nombre} = item
-  
-
-  
-  
   
   
   return (
