@@ -9,16 +9,6 @@ interface paramsUser {
   }
 }
 
-const getUser = async (id: string): Promise<User | null> => {
-  const user = await prisma.user.findFirst({ where: { id } })
-  return user
-}
-
-const validateEmail = async (email: string): Promise<boolean> => {
-  const user = await prisma.user.findFirst({ where: { email } })
-  return !user
-}
-
 export async function GET(request: NextRequest, { params }: paramsUser) {
   const { id } = params
 

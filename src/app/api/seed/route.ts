@@ -32,12 +32,27 @@ export async function GET() {
     data: [
       {
         id: '26d0a232-63c5-4cd4-a388-a047580e95f7',
+        name: 'Casa en venta en barrio cerrado',
         coveredArea: 120.5,
         totalLandArea: 200.0,
         bathrooms: 2,
         bedrooms: 3,
         price: 250000,
-        img: 'https://repstaticneu.azureedge.net/images/2003/L/WM/Large/7a9d1c70-1d58-45c4-a4ce-a2d1345f3759-4161ac81-1a33-461d-9cf2-f9e03859b301.jpg',
+        img: 'https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/house2.jpg?alt=media&token=fb466f42-8b7e-4525-bf09-67dece75320e',
+        amenities: ['Jardín', 'Piscina'],
+        services: ['Agua corriente', 'Luz', 'Gas natural', 'Internet'],
+        nearbyPlaces: ['Escuela Primaria', 'Estación de Servicio'],
+        nearbyBusStops: ['Parada 1', 'Parada 2']
+      },
+      {
+        id: '2e0944b0-e9e3-41f9-b450-89bcac180142',
+        name: 'Casa en venta Fenix',
+        coveredArea: 120.5,
+        totalLandArea: 200.0,
+        bathrooms: 2,
+        bedrooms: 3,
+        price: 250000,
+        img: 'https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/house3.jpg?alt=media&token=6a24c877-37eb-447a-8552-33cff8b5688e',
         amenities: ['Jardín', 'Piscina'],
         services: ['Agua corriente', 'Luz', 'Gas natural', 'Internet'],
         nearbyPlaces: ['Escuela Primaria', 'Estación de Servicio'],
@@ -45,12 +60,13 @@ export async function GET() {
       },
       {
         id: '2e0944b0-e9e3-41f9-b450-89bcac180143',
+        name: 'Casa en venta en Puebla',
         coveredArea: 95.0,
         totalLandArea: 150.0,
         bathrooms: 1,
         bedrooms: 2,
         price: 180000,
-        img: 'https://repstaticneu.azureedge.net/images/2003/L/WM/Large/4c4cbe3f-3211-457a-9ceb-359c25838c96-d85b11c2-dfeb-4d60-94b1-e38aeccb4502.jpg',
+        img: 'https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/house1.jpg?alt=media&token=51a05d54-9be7-4534-8ed4-fb3ca2733f72',
         amenities: ['Terraza'],
         services: ['Agua corriente', 'Luz', 'Internet'],
         nearbyPlaces: ['Supermercado', 'Parque Central'],
@@ -60,7 +76,7 @@ export async function GET() {
   })
 
   // crear calificaciones de prueba
-  const propertyIds = ['26d0a232-63c5-4cd4-a388-a047580e95f7', '2e0944b0-e9e3-41f9-b450-89bcac180143']
+  const propertyIds = ['26d0a232-63c5-4cd4-a388-a047580e95f7', '2e0944b0-e9e3-41f9-b450-89bcac180143', '2e0944b0-e9e3-41f9-b450-89bcac180142']
 
   const userIds = ['218da11a-3790-4040-b1f0-d5e6de9d5250', '618c01ea-fc81-4ac3-a6b3-bf07d87e607e']
 
