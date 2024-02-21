@@ -2,6 +2,7 @@
 import FeaturedProducts from "@/components/FeaturedProducts/FeaturedProducts";
 import { useAppContext } from "./context";
 import { SearchBar } from "@/components/SearchBar/SearchBar"
+import { SearchResult } from "@/components/SearchResult/SearchResult"
 import styles from "./page.module.css"
 
 import { useEffect } from 'react';
@@ -45,7 +46,7 @@ export default function HomePage(): JSX.Element {
     <div>
       <section className={styles.title} >
         <h1>Inmobiliaria</h1>
-        <SearchBar />
+        <SearchBar testArray={context.testArray}/>
       </section>
       <FeaturedProducts testArray={context.testArray} />
     </div>
