@@ -14,6 +14,11 @@ const getUser = async (id: string): Promise<User | null> => {
   return user
 }
 
+const validateEmail = async (email: string): Promise<boolean> => {
+  const user = await prisma.user.findFirst({ where: { email } })
+  return !user
+}
+
 export async function GET(request: NextRequest, { params }: paramsUser) {
   const { id } = params
 
@@ -48,6 +53,13 @@ export async function PUT(request: NextRequest, { params }: paramsUser) {
 
     const { name, email, password } = await putSchema.validate(await request.json())
 
+    if (email) {
+      const emailExists = await validateEmail(email)
+      if (!emailExists) {
+        return NextResponse.json({ message: 'Email already exists' }, { status: 400 })
+      }
+    }
+
     const updatedUser = await prisma.user.update({
       where: { id },
       data: { name, email, password }
@@ -55,6 +67,6 @@ export async function PUT(request: NextRequest, { params }: paramsUser) {
 
     return NextResponse.json(updatedUser)
   } catch (error) {
-    return NextResponse.json({ message: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ message: 'Internal server error', error }, { status: 500 })
   }
 }
