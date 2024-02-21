@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import * as yup from 'yup'
 import prisma from '@/libs/prisma'
 
 export async function GET(request: Request) {
@@ -20,4 +21,23 @@ export async function GET(request: Request) {
   const users = await prisma.user.findMany()
 
   return NextResponse.json(users)
+}
+
+const postSchema = yup.object({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  password: yup.string().required()
+})
+
+export async function POST(request: Request) {
+  try {
+    const body = await postSchema.validate(await request.json())
+
+    const user = await prisma.user.create({
+      data: body
+    })
+    return NextResponse.json(user, { status: 201 })
+  } catch (error) {
+    return NextResponse.json(error, { status: 400 })
+  }
 }
