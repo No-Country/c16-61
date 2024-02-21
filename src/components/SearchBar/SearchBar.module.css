@@ -12,7 +12,6 @@
 }
 
 .searchButton {
-  width: 50vh;
   justify-content: center;
   align-self: center;
   padding: 0.5rem;
@@ -27,3 +26,14 @@
 .searchButton:hover {
   background-color: #1c729b;
 }
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons button {
+  width: 200px;
+}
+

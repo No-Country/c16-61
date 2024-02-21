@@ -14,3 +14,18 @@
     flex-direction: column;
     color: antiquewhite;
 }
+
+
+.slides {
+    width: 50%;
+    height: 292px;
+}
+
+
+@media (width < 860px ) {
+
+    .slides {
+        width: 70%;
+    }
+
+}

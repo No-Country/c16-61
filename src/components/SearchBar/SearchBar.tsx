@@ -24,8 +24,10 @@ export function SearchBar({testArray}): JSX.Element {
           type="text"
           className={styles.searchInput}
         />
-        <button className={styles.searchButton} onClick={handleSearch} type="submit">Buscar</button>
-        <button className={styles.searchButton} onClick={clearSearch} type="button">Clear</button>
+        <div className={styles.buttons} >
+          <button className={styles.searchButton} onClick={handleSearch} type="submit">Buscar</button>
+          <button className={styles.searchButton} onClick={clearSearch} type="button">Clear</button>
+        </div>
       </form>
       {showResults && <SearchResult testArray={testArray} />}
     </section>

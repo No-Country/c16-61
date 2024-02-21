@@ -16,3 +16,21 @@
     height: 292px;
     margin: 20px 
 }
+
+
+@media(width < 860px) {
+
+    .container {
+        flex-direction: row;
+    }
+
+    .containerCarousel{
+        width: 100%;
+    }
+
+    .containerCarousel h3, .containerCarousel p {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+}
