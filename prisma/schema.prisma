@@ -27,6 +27,7 @@ model User {
 
 model Property {
   id             String    @id @default(uuid())
+  name           String    @unique // nombre de la propiedad
   coveredArea    Float // m² cubiertos
   totalLandArea  Float // m² totales de terreno
   bathrooms      Int // cantidad de baños
