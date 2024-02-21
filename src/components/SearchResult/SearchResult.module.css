@@ -1,0 +1,39 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 2% 5%;
+}
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+.img {
+  height: 40%;
+}
+
+.card {
+  width: calc(25% - 20px);
+  margin: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+}
