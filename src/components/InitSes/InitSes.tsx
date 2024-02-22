@@ -1,6 +1,5 @@
 import styles from "./InitSes.module.css"
 import { CustomButton } from "@/UI/button/Button"
-import { useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 
 export default function InitSesion({changesShow}): JSX.Element {
@@ -9,15 +8,6 @@ export default function InitSesion({changesShow}): JSX.Element {
     event.preventDefault()
     const email = event.target.inputEmail.value
     const password = event.target.inputPassword5.value
-
-    const result = await fetch("http://localhost:3000/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    })
-    console.log(result);
     
   }
 

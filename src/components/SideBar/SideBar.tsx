@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { OptionListComponent } from '../OptionList/OptionList';
 import InitSesion from '../InitSes/InitSes';
 import MyData from '../MyData/MyData';
+import Register from '../Register/Register';
 type SideBarProps = {
   show: boolean;
   handleClose: () => void;
@@ -21,6 +22,8 @@ export function SideBar(props: SideBarProps): JSX.Element {
             <OptionListComponent changesShow={changesShow}></OptionListComponent>
           ) : showState === "InitSesion" ? (
             <InitSesion changesShow={changesShow}></InitSesion>
+          ) : showState === "Register" ? (
+            <Register changesShow={changesShow}></Register>
           ) : showState === "MyData" ? (
             <MyData changesShow={changesShow}></MyData>
           ) : (

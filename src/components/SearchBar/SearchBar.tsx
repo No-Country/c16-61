@@ -5,6 +5,7 @@ import { SearchResult } from "@/components/SearchResult/SearchResult";
 import React, {useState} from 'react';
 
 export function SearchBar({testArray}): JSX.Element {
+  
   const [showResults, setShowResults] = useState(false);
 
   const handleSearch = (event) => {
