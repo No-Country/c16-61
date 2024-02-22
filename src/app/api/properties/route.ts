@@ -3,6 +3,7 @@ import * as yup from 'yup'
 import prisma from '@/libs/prisma'
 
 const postSchema = yup.object({
+  name: yup.string().required(), // nombre de la propiedad
   coveredArea: yup.number().positive().required(), // m² cubiertos
   totalLandArea: yup.number().positive().required(), // m² totales de terreno
   bathrooms: yup.number().integer().positive().required(), // cantidad de baños
