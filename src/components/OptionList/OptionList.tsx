@@ -9,6 +9,9 @@ export function OptionListComponent({changesShow}) {
                   <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("InitSesion")}}>Iniciar Sesión</a>
                 </li>
                 <li className={styles.navItem}>
+                  <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("Register")}}>Registrarse</a>
+                </li>
+                <li className={styles.navItem}>
                   <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("MyData")}} >Mi Datos</a>
                 </li>
                 <li className={styles.navItem}>

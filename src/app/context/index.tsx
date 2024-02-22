@@ -1,20 +1,29 @@
 "use client"
 import { createContext, useContext, useState } from 'react'
 
-const AppContext = createContext<any>({})
+const FeaturedPropertiesContext = createContext<any>({})
+
+const AllPropertiesContext = createContext<any>({})
 
 export function AppWrapper({ children }: Readonly<{
     children: React.ReactNode
   }>) {
     const [testArray, setTestArray] = useState([])
+    
+    const [allProperties, setAllProperties] = useState([])
 
     return (
-        <AppContext.Provider value={{ testArray, setTestArray }}>
-            {children}
-        </AppContext.Provider>
+        <AllPropertiesContext.Provider value={{ allProperties, setAllProperties }}>
+            <FeaturedPropertiesContext.Provider value={{ testArray, setTestArray }}>
+                {children}
+            </FeaturedPropertiesContext.Provider>
+        </AllPropertiesContext.Provider>
     )
 }
 
-export function useAppContext() {
-    return useContext(AppContext)
+export function useFeaturedPropertiesContext() {
+    return useContext(FeaturedPropertiesContext)
+}
+export function useAllPropertiesContext() {
+    return useContext(AllPropertiesContext)
 }
