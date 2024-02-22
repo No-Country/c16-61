@@ -2,13 +2,9 @@
 
 import Carousel from 'react-bootstrap/Carousel';
 import { CarouselCard } from '@/UI/carouselCard/carouselCard';
-import style from "./FeaturedProducts.module.css"
+import style from "./FeaturedProperties.module.css"
 
 import { useRouter } from 'next/navigation'
-import { createContext, useContext } from 'react';
-
-
-
 
 export default function FeaturedProducts({testArray}): JSX.Element {
   

@@ -2,5 +2,7 @@ export type ButtonProps = {
         variant?: string
         text?: string
         onClick: () => void
-        className?: any   
+        className?: string,
+        type?: "button" | "submit" | "reset" | undefined 
 }
+
