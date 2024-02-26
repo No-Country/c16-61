@@ -1,25 +1,28 @@
+import { signOut, useSession } from 'next-auth/react'
+import styles from './OptionList.module.css'
 
-import styles from "./OptionList.module.css";
+export function OptionListComponent({ changesShow }) {
+  const { data: session } = useSession()
+  const user = session?.user
 
-export function OptionListComponent({changesShow}) {
-    return (
-      <>      
-              <ul className={`${styles.nav} nav flex-column`}>
-                <li className={styles.navItem}>
-                  <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("InitSesion")}}>Iniciar Sesión</a>
-                </li>
-                <li className={styles.navItem}>
-                  <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("Register")}}>Registrarse</a>
-                </li>
-                <li className={styles.navItem}>
-                  <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow("MyData")}} >Mi Datos</a>
-                </li>
-                <li className={styles.navItem}>
-                  <a className={`${styles.closeLink} active`}  >Cerrar Sesión</a>
-                </li>
-              </ul>
-              <p className={`${styles.navMail}`}>Bienvenido</p>
-              <p className={styles.navMail}>test@test.com</p>
-      </>
-    );
-  }
+  return (
+    <>
+      <ul className={`${styles.nav} nav flex-column`}>
+        <li className={styles.navItem}>
+          <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('InitSesion') }}>Iniciar Sesión</a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('Register') }}>Registrarse</a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('MyData') }} >Mi Datos</a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={`${styles.closeLink} active`} onClick={async () => { await signOut() }} >Cerrar Sesión</a>
+        </li>
+      </ul >
+      <p className={`${styles.navMail}`}>Bienvenido</p>
+      <p className={styles.navMail}>{user?.email}</p>
+    </>
+  )
+}

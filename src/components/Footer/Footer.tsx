@@ -1,17 +1,19 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './Footer.module.css'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
+import { LogoutButton } from '@/components'
 
 export function Footer() {
   return (
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >
         <div className={styles.infOptions} >
-          <p>Login</p>
-          <p>Mi perfil</p>
+          <p><Link href={'/api/auth/signin'} style={{ color: 'white' }} >Login</Link></p>
+          <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
           <p>Buscar</p>
-          <p>Logout</p>
+          <LogoutButton />
           <p>©2022 LyS</p>
         </div>
 
