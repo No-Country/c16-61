@@ -1,22 +1,21 @@
-"use client"
+'use client'
 
-import styles from './SearchBar.module.css';
-import { SearchResult } from "@/components/SearchResult/SearchResult";
-import React, {useState} from 'react';
+import React, { useState } from 'react'
+import styles from './SearchBar.module.css'
+import { SearchResult } from '@/components/SearchResult/SearchResult'
 
-export function SearchBar({testArray}): JSX.Element {
-  
-  const [showResults, setShowResults] = useState(false);
+export function SearchBar({ testArray }): JSX.Element {
+  const [showResults, setShowResults] = useState(false)
 
   const handleSearch = (event) => {
-    event.preventDefault();
-    setShowResults(true); // Show search results when the button is clicked
-  };
+    event.preventDefault()
+    setShowResults(true) // Show search results when the button is clicked
+  }
 
   const clearSearch = (event) => {
-    event.preventDefault();
-    setShowResults(false); // Hide search results when the button is clicked
-  };
+    event.preventDefault()
+    setShowResults(false) // Hide search results when the button is clicked
+  }
 
   return (
     <section>
@@ -32,5 +31,5 @@ export function SearchBar({testArray}): JSX.Element {
       </form>
       {showResults && <SearchResult testArray={testArray} />}
     </section>
-  );
+  )
 }

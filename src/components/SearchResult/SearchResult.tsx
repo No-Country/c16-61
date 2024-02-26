@@ -1,12 +1,12 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { useRouter } from 'next/navigation';
-import styles from './SearchResult.module.css';
+import { useRouter } from 'next/navigation'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import styles from './SearchResult.module.css'
 
-export function SearchResult({testArray}): JSX.Element {
-    const router = useRouter();
+export function SearchResult({ testArray }): JSX.Element {
+  const router = useRouter()
 
-    return (
+  return (
         <div>
             <h3 className={styles.title}>Search Results</h3>
             <div className={styles.cardContainer}>
@@ -18,7 +18,7 @@ export function SearchResult({testArray}): JSX.Element {
                         <Card.Text>
                             <p>Precio: ${item.property.price}</p>
                             <p>Habitaciones: {item.property.bedrooms}</p>
-                            <p>Baños: {item.property.bathrooms}</p>  
+                            <p>Baños: {item.property.bathrooms}</p>
                         </Card.Text>
                         <Button variant="primary">Contactanos</Button>
                     </Card.Body>
@@ -26,5 +26,5 @@ export function SearchResult({testArray}): JSX.Element {
             ))}
             </div>
         </div>
-    );
+  )
 }

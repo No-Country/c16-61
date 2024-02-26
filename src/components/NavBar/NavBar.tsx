@@ -1,19 +1,17 @@
-"use client"
+'use client'
 
-import { SideBar } from '../SideBar/SideBar';
-import { CustomButton } from '@/UI/button/Button';
-import styles from "./NavBar.module.css"
-
-
-import { useState } from 'react';
+import { useState } from 'react'
+import styles from './NavBar.module.css'
+import { SideBar } from '../SideBar/SideBar'
+import { CustomButton } from '@/UI/button/Button'
 
 export function NavBar(): JSX.Element {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => { setShow(false) }
+  const handleShow = () => { setShow(true) }
 
-    return (
+  return (
       <nav className={styles.navbar} >
         <div className={styles.titleContainer}>
           <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
@@ -24,5 +22,5 @@ export function NavBar(): JSX.Element {
         </div>
         <SideBar show={show} handleClose={handleClose} />
       </nav>
-    )
-  }
+  )
+}

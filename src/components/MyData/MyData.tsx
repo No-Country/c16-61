@@ -1,21 +1,20 @@
-import styles from "./MyData.module.css"
-import { CustomButton } from "@/UI/button/Button"
-import { useEffect } from "react";
-import Form from 'react-bootstrap/Form';
+import { useEffect } from 'react'
+import Form from 'react-bootstrap/Form'
+import styles from './MyData.module.css'
+import { CustomButton } from '@/UI/button/Button'
 
-export default function MyData({changesShow}): JSX.Element {
+export default function MyData({ changesShow }): JSX.Element {
+  async function fillData() {
+    const result = await fetch('http://localhost:3000/api/users/efd8cfaf-4057-4da3-8ab9-a064ed946dc0', {
 
-    async function fillData() {
-        const result = await fetch("http://localhost:3000/api/users/efd8cfaf-4057-4da3-8ab9-a064ed946dc0", {
-            
-        })
-        console.log(result);
-    }
+    })
+    console.log(result)
+  }
 
-    useEffect(() => {
-        fillData()
-    }, [])
-    return (
+  useEffect(() => {
+    fillData()
+  }, [])
+  return (
       <div className={styles.container}>
         <h4 className={styles.title}>Mis Datos</h4>
         <div className={styles.containerInput}>
@@ -58,7 +57,7 @@ export default function MyData({changesShow}): JSX.Element {
                 placeholder="******"
                 />
         </div>
-        <CustomButton className={styles.button} onClick={() => changesShow("NoUser")} text="Volver"></CustomButton>
+        <CustomButton className={styles.button} onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
       </div>
-    )
-  }
+  )
+}

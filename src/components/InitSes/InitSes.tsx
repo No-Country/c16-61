@@ -1,19 +1,17 @@
-import styles from "./InitSes.module.css"
-import { CustomButton } from "@/UI/button/Button"
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
+import styles from './InitSes.module.css'
+import { CustomButton } from '@/UI/button/Button'
 
-export default function InitSesion({changesShow}): JSX.Element {
-
+export default function InitSesion({ changesShow }): JSX.Element {
   async function InitSesion(event) {
     event.preventDefault()
     const email = event.target.inputEmail.value
     const password = event.target.inputPassword5.value
-    
   }
 
-    return (
-        <Form className={styles.container} onSubmit={(e) => InitSesion(e)}>
-          <h4  className={styles.title}>Iniciar Sesión</h4>
+  return (
+        <Form className={styles.container} onSubmit={async (e) => { await InitSesion(e) }}>
+          <h4 className={styles.title}>Iniciar Sesión</h4>
           <div className={styles.containerInput}>
             <Form.Label htmlFor="inputEmail">Email</Form.Label>
               <Form.Control
@@ -31,7 +29,7 @@ export default function InitSesion({changesShow}): JSX.Element {
               />
           </div>
             <CustomButton className={styles.button} type="submit" onClick={() => {}} text="Iniciar Sesión"></CustomButton>
-            <CustomButton onClick={() => changesShow("NoUser")} text="Volver"></CustomButton>
+            <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
         </Form>
-    )
-  }
+  )
+}

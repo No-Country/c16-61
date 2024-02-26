@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.css'
+import { AppWrapper } from './context'
 import { Footer, Header } from '@/components'
-import { AppWrapper } from './context';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +24,7 @@ export default function RootLayout({
           <Header />
 
           <AppWrapper>
-            <main style={{minHeight:"80vh"}}>
+            <main style={{ minHeight: '80vh' }}>
               {children}
             </main>
           </AppWrapper>
