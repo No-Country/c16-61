@@ -1,22 +1,20 @@
+import { signIn } from 'next-auth/react'
 import Form from 'react-bootstrap/Form'
 import styles from './InitSes.module.css'
 import { CustomButton } from '@/UI/button/Button'
 import { CustomLogo } from '@/UI/logo/Logo'
-import { useSession, signIn } from "next-auth/react"
 
 export default function InitSesion({ changesShow }): JSX.Element {
-
-  function initSesionWithAuth(appToLogin) {
-
-    signIn(appToLogin)
+  function initSesionWithAuth(appToLogin: string) {
+    signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
   }
 
-  async function InitSesion(event) {
+  async function InitSesion(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const email = event.target.inputEmail.value
-    const password = event.target.inputPassword5.value
+    const email = (event.currentTarget.elements.namedItem('inputEmail') as HTMLInputElement).value
+    const password = (event.currentTarget.elements.namedItem('inputPassword') as HTMLInputElement).value
 
-    signIn("credentials", { email, password })
+    await signIn('credentials', { email, password, callbackUrl: 'http://localhost:3000' })
   }
 
   return (
@@ -31,16 +29,16 @@ export default function InitSesion({ changesShow }): JSX.Element {
         />
       </div>
       <div className={styles.containerInput}>
-        <Form.Label htmlFor="inputPassword5">Contraseña</Form.Label>
+        <Form.Label htmlFor="inputPassword">Contraseña</Form.Label>
         <Form.Control
           type="password"
-          id="inputPassword5"
+          id="inputPassword"
           placeholder="******"
         />
       </div>
       <div className={styles.containerLogos}>
-        <CustomLogo onClick={() => { initSesionWithAuth("google") }} className={styles.googleLogo} src="./googleLogo.svg"></CustomLogo>
-        <CustomLogo onClick={() => { initSesionWithAuth("github") }} className={styles.githubLogo} src="./githubLogo.svg"></CustomLogo>
+        <CustomLogo onClick={() => { initSesionWithAuth('google') }} className={styles.googleLogo} src="./googleLogo.svg"></CustomLogo>
+        <CustomLogo onClick={() => { initSesionWithAuth('github') }} className={styles.githubLogo} src="./githubLogo.svg"></CustomLogo>
       </div>
       <CustomButton className={styles.button} type="submit" onClick={() => { }} text="Iniciar Sesión"></CustomButton>
       <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>

@@ -3,18 +3,23 @@ import Link from 'next/link'
 import styles from './Footer.module.css'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
+import { getUserSessionServer } from '@/auth/actions/auth-actions'
 import { LogoutButton } from '@/components'
 
-export function Footer() {
+export async function Footer() {
+  const user = await getUserSessionServer()
+
   return (
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >
         <div className={styles.infOptions} >
-          <p><Link href={'/api/auth/signin'} style={{ color: 'white' }} >Login</Link></p>
-          <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
           <p>Buscar</p>
+          {
+            user &&
+            <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
+          }
           <LogoutButton />
-          <p>©2022 LyS</p>
+          <p>©{new Date().getFullYear()} LyS</p>
         </div>
 
         <div className={styles.redes} >
