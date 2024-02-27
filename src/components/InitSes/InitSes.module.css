@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -6,19 +6,34 @@
     height: 450px;
 }
 
-.containerInput{
+.containerInput {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
+.containerLogos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.title{
+
+.title {
     color: white;
 }
 
-.button{
+.button {
     width: 150px;
 }
 
+.googleLogo {
+    width: 40px;
+    height: 40px;
+}
+
+.githubLogo {
+    width: 40px;
+    height: 40px;
+}
