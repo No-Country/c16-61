@@ -26,6 +26,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
           type="email"
           id="inputEmail"
           placeholder="name@example.com"
+          required
         />
       </div>
       <div className={styles.containerInput}>
@@ -34,13 +35,14 @@ export default function InitSesion({ changesShow }): JSX.Element {
           type="password"
           id="inputPassword"
           placeholder="******"
+          required
         />
       </div>
+      <CustomButton className={styles.button} type="submit" onClick={() => { }} text="Iniciar Sesión"></CustomButton>
       <div className={styles.containerLogos}>
         <CustomLogo onClick={() => { initSesionWithAuth('google') }} className={styles.googleLogo} src="./googleLogo.svg"></CustomLogo>
         <CustomLogo onClick={() => { initSesionWithAuth('github') }} className={styles.githubLogo} src="./githubLogo.svg"></CustomLogo>
       </div>
-      <CustomButton className={styles.button} type="submit" onClick={() => { }} text="Iniciar Sesión"></CustomButton>
       <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
     </Form>
   )
