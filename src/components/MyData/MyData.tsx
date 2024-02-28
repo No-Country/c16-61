@@ -3,15 +3,9 @@ import Form from 'react-bootstrap/Form'
 import styles from './MyData.module.css'
 import { CustomButton } from '@/UI/button/Button'
 
-<<<<<<< HEAD
-export default function MyData ({ changesShow }): JSX.Element {
-  async function fillData () {
-    const result = await fetch('http://localhost:3000/api/users/efd8cfaf-4057-4da3-8ab9-a064ed946dc0', {
-=======
 export default function MyData({ changesShow }): JSX.Element {
   const { data: session } = useSession()
   const user = session?.user
->>>>>>> e106dfe921a6b7965df0f9206192f30c8bb54f4d
 
   return (
     <div className={styles.container}>

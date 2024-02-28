@@ -6,13 +6,9 @@ import twitterLogo from '../../../public/images/twitter.svg'
 import { getUserSessionServer } from '@/auth/actions/auth-actions'
 import { LogoutButton } from '@/components'
 
-<<<<<<< HEAD
-export function Footer () {
-=======
 export async function Footer() {
   const user = await getUserSessionServer()
 
->>>>>>> e106dfe921a6b7965df0f9206192f30c8bb54f4d
   return (
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >
