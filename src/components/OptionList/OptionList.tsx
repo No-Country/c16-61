@@ -1,7 +1,7 @@
 import { signOut, useSession } from 'next-auth/react'
 import styles from './OptionList.module.css'
 
-export function OptionListComponent({ changesShow }) {
+export function OptionListComponent ({ changesShow }) {
   const { data: session } = useSession()
   const user = session?.user
 

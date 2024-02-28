@@ -14,7 +14,7 @@ const getProperty = async (id: string): Promise<Property | null> => {
   return property
 }
 
-export async function GET(request: NextRequest, { params }: paramsProperty) {
+export async function GET (request: NextRequest, { params }: paramsProperty) {
   const { id } = params
 
   try {
@@ -43,7 +43,7 @@ const putSchema = yup.object({
   nearbyBusStops: yup.array().optional() // paradas de colectivo cercanas
 })
 
-export async function PUT(request: NextRequest, { params }: paramsProperty) {
+export async function PUT (request: NextRequest, { params }: paramsProperty) {
   const { id } = params
 
   try {

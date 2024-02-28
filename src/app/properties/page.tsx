@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Contiene la lista de las propiedades de la aplicacion'
 }
 
-export default async function UsersPage() {
+export default async function UsersPage () {
   return (
     <div>
       <h1>Aquí va el contenido de la pagina propiedades</h1>

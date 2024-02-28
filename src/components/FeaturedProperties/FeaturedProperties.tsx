@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import style from './FeaturedProperties.module.css'
 import { CarouselCard } from '@/UI/carouselCard/carouselCard'
 
-export default function FeaturedProducts({ testArray }): JSX.Element {
+export default function FeaturedProducts ({ testArray }): JSX.Element {
   const router = useRouter()
 
   return (

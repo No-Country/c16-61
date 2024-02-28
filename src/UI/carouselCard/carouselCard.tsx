@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './carouselCard.module.css'
-export function CarouselCard({ item }) {
+export function CarouselCard ({ item }) {
   return (
       <div className={styles.container} >
         <img className={styles.slides} src={item.img} alt="slides" />

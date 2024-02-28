@@ -6,9 +6,9 @@ import styles from './Register.module.css'
 
 import { CustomButton } from '@/UI/button/Button'
 
-export default function Register({ changesShow }): JSX.Element {
+export default function Register ({ changesShow }): JSX.Element {
   const [showState, changesShowState] = useState('none')
-  async function RegisterUser(event) {
+  async function RegisterUser (event) {
     event.preventDefault()
     const name = event.target.inputName.value
     const email = event.target.inputEmail.value

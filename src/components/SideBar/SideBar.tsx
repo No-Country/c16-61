@@ -9,7 +9,7 @@ interface SideBarProps {
   show: boolean
   handleClose: () => void
 }
-export function SideBar(props: SideBarProps): JSX.Element {
+export function SideBar (props: SideBarProps): JSX.Element {
   const [showState, changesShow] = useState('NoUser')
 
   return (

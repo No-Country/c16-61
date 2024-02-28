@@ -16,13 +16,13 @@ const postSchema = yup.object({
   nearbyBusStops: yup.array().required() // paradas de colectivo cercanas
 })
 
-export async function GET(request: Request) {
+export async function GET (request: Request) {
   const properties = await prisma.property.findMany()
 
   return NextResponse.json(properties)
 }
 
-export async function POST(request: Request) {
+export async function POST (request: Request) {
   try {
     const body = await postSchema.validate(await request.json())
 

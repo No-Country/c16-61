@@ -2,8 +2,8 @@ import Form from 'react-bootstrap/Form'
 import styles from './InitSes.module.css'
 import { CustomButton } from '@/UI/button/Button'
 
-export default function InitSesion({ changesShow }): JSX.Element {
-  async function InitSesion(event) {
+export default function InitSesion ({ changesShow }): JSX.Element {
+  async function InitSesion (event) {
     event.preventDefault()
     const email = event.target.inputEmail.value
     const password = event.target.inputPassword5.value

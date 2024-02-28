@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
         email: { label: 'Correo electrónico', type: 'email', placeholder: 'tu-correo@mail.com' },
         password: { label: 'Contraseña', type: 'password', placeholder: '********' }
       },
-      async authorize(credentials, req) {
+      async authorize (credentials, req) {
         const user = await signInEmailPassword(credentials?.email || '', credentials?.password || '')
 
         if (!user) {
@@ -35,11 +35,11 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
 
-    async signIn({ user, account, profile }) {
+    async signIn ({ user, account, profile }) {
       return true
     },
 
-    async jwt({ token, account, profile }) {
+    async jwt ({ token, account, profile }) {
       const dbUser = await prisma.user.findFirst({
         where: { email: token?.email ?? 'no-email' }
       })
@@ -54,8 +54,8 @@ export const authOptions: NextAuthOptions = {
       return token
     },
 
-    async session({ session, token, user }) {
-      if (session && session.user) {
+    async session ({ session, token, user }) {
+      if (session?.user) {
         session.user.roles = token.roles
         session.user.id = token.id
       }

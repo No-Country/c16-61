@@ -5,7 +5,7 @@ const FeaturedPropertiesContext = createContext<any>({})
 
 const AllPropertiesContext = createContext<any>({})
 
-export function AppWrapper({ children }: Readonly<{
+export function AppWrapper ({ children }: Readonly<{
   children: React.ReactNode
 }>) {
   const [testArray, setTestArray] = useState([])
@@ -21,9 +21,9 @@ export function AppWrapper({ children }: Readonly<{
   )
 }
 
-export function useFeaturedPropertiesContext() {
+export function useFeaturedPropertiesContext () {
   return useContext(FeaturedPropertiesContext)
 }
-export function useAllPropertiesContext() {
+export function useAllPropertiesContext () {
   return useContext(AllPropertiesContext)
 }

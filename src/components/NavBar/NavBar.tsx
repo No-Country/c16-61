@@ -5,7 +5,7 @@ import styles from './NavBar.module.css'
 import { SideBar } from '../SideBar/SideBar'
 import { CustomButton } from '@/UI/button/Button'
 
-export function NavBar(): JSX.Element {
+export function NavBar (): JSX.Element {
   const [show, setShow] = useState(false)
 
   const handleClose = () => { setShow(false) }

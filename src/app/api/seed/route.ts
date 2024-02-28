@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import prisma from '@/libs/prisma'
 import { type CreatePropertyRating } from '@/properties-raking'
 
-export async function GET() {
+export async function GET () {
   // DELETE ALL data
   await prisma.propertyRating.deleteMany()
   await prisma.user.deleteMany()

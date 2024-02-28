@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Contiene la lista de usuarios de la aplicacion'
 }
 
-export default async function UsersPage() {
+export default async function UsersPage () {
   const users = await prisma.user.findMany()
 
   return (

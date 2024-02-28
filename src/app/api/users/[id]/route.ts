@@ -18,7 +18,7 @@ const validateEmail = async (email: string): Promise<boolean> => {
   return !user
 }
 
-export async function GET(request: NextRequest, { params }: paramsUser) {
+export async function GET (request: NextRequest, { params }: paramsUser) {
   const { id } = params
 
   try {
@@ -40,7 +40,7 @@ const putSchema = yup.object({
   password: yup.string().optional()
 })
 
-export async function PUT(request: NextRequest, { params }: paramsUser) {
+export async function PUT (request: NextRequest, { params }: paramsUser) {
   const { id } = params
 
   try {

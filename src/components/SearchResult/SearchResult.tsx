@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import styles from './SearchResult.module.css'
 
-export function SearchResult({ testArray }): JSX.Element {
+export function SearchResult ({ testArray }): JSX.Element {
   const router = useRouter()
 
   return (

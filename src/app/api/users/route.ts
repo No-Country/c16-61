@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import * as yup from 'yup'
 import prisma from '@/libs/prisma'
 
-export async function GET(request: Request) {
+export async function GET (request: Request) {
   // TODO Pagination
   // const { searchParams } = new URL(request.url)
 
@@ -29,7 +29,7 @@ const postSchema = yup.object({
   password: yup.string().required()
 })
 
-export async function POST(request: Request) {
+export async function POST (request: Request) {
   try {
     const body = await postSchema.validate(await request.json())
 

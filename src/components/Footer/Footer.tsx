@@ -5,7 +5,7 @@ import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
 import { LogoutButton } from '@/components'
 
-export function Footer() {
+export function Footer () {
   return (
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >

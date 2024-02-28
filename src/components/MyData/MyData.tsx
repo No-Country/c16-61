@@ -3,8 +3,8 @@ import Form from 'react-bootstrap/Form'
 import styles from './MyData.module.css'
 import { CustomButton } from '@/UI/button/Button'
 
-export default function MyData({ changesShow }): JSX.Element {
-  async function fillData() {
+export default function MyData ({ changesShow }): JSX.Element {
+  async function fillData () {
     const result = await fetch('http://localhost:3000/api/users/efd8cfaf-4057-4da3-8ab9-a064ed946dc0', {
 
     })

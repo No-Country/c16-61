@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Explora propiedades exclusivas con Imomubiales. Encuentra, evalúa y guarda tus favoritos en nuestra plataforma inmobiliaria digitalizada.'
 }
 
-export default function RootLayout({
+export default function RootLayout ({
   children
 }: Readonly<{
   children: React.ReactNode
