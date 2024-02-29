@@ -48,6 +48,16 @@
   margin: 0.5rem;
 }
 
+.footer .grupo2 {
+  background-color: #0a1a2a;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.footer .grupo2 small {
+  font-size: 15px;
+}
 
 @media (width < 860px) {
   .redes{
