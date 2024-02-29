@@ -34,6 +34,9 @@ export async function Footer() {
           </div>
         </div>
       </div>
+      <div className={styles.grupo2}>
+        <small>&copy; 2024 <b>No Country</b> | C16-61</small>
+      </div>
     </footer>
   )
 }
