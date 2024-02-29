@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs'
 import { NextResponse } from 'next/server'
+import { client } from '@/libs/algolia'
 import prisma from '@/libs/prisma'
 import { type CreatePropertyRating } from '@/properties-raking'
-import { client } from '@/libs/algolia'
 
 export async function GET() {
   // DELETE ALL data
@@ -87,7 +87,6 @@ export async function GET() {
   // Crear propiedaes en algolia tambien
 
   const index = client.initIndex('properties')
-
 
   await index.saveObjects([
     {

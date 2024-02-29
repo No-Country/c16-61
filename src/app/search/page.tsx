@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useFeaturedPropertiesContext } from '../context'
 import { SearchBar } from '@/components/SearchBar/SearchBar'
 
-export default function Search (router): JSX.Element {
+export default function Search(router): JSX.Element {
   const contextFeaturedProperties = useFeaturedPropertiesContext()
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Search (router): JSX.Element {
         }
         contextFeaturedProperties.setTestArray(newArray)
       } catch (error) {
-        console.error('Error:', error)
+        throw new Error('Error al cargar los datos')
       }
     }
 
@@ -27,6 +27,6 @@ export default function Search (router): JSX.Element {
 
   return (
     <div>
-    <SearchBar testArray={contextFeaturedProperties.testArray} router={router} initialShowResults={true}></SearchBar></div>
+      <SearchBar testArray={contextFeaturedProperties.testArray} router={router} initialShowResults={true}></SearchBar></div>
   )
 }

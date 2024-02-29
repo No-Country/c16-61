@@ -1,4 +1,4 @@
-import { signIn } from 'next-auth/react'
+// import { signIn } from 'next-auth/react'
 import Form from 'react-bootstrap/Form'
 import styles from './InitSes.module.css'
 import { CustomButton } from '@/UI/button/Button'
@@ -6,15 +6,15 @@ import { CustomLogo } from '@/UI/logo/Logo'
 
 export default function InitSesion({ changesShow }): JSX.Element {
   function initSesionWithAuth(appToLogin: string) {
-    signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
+    // signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
   }
 
   async function InitSesion(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const email = (event.currentTarget.elements.namedItem('inputEmail') as HTMLInputElement).value
-    const password = (event.currentTarget.elements.namedItem('inputPassword') as HTMLInputElement).value
+    // const email = (event.currentTarget.elements.namedItem('inputEmail') as HTMLInputElement).value
+    // const password = (event.currentTarget.elements.namedItem('inputPassword') as HTMLInputElement).value
 
-    await signIn('credentials', { email, password, callbackUrl: 'http://localhost:3000' })
+    // await signIn('credentials', { email, password, callbackUrl: 'http://localhost:3000' })
   }
 
   return (

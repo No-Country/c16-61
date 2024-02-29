@@ -1,15 +1,14 @@
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
-import { getUserSessionServer } from '@/auth/actions/auth-actions'
-import { LogoutButton } from '@/components'
+// import { LogoutButton } from '@/components'
 
 const ProfilePage = async () => {
-  const user = await getUserSessionServer()
+  const user = null
 
   if (!user) redirect('/api/auth/signin')
 
-  const userName = user.name || 'Nombre de usuario'
-  const userImage = user.image || 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png'
+  const userName = 'Nombre de usuario'
+  const userImage = 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png'
 
   return (
     <div>
@@ -19,7 +18,8 @@ const ProfilePage = async () => {
         <h2>{userName}</h2>
       </div>
 
-      <LogoutButton />
+      {/* <LogoutButton /> */}
+      <button>close session</button>
     </div>
   )
 }

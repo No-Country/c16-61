@@ -3,11 +3,10 @@ import Link from 'next/link'
 import styles from './Footer.module.css'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
-import { getUserSessionServer } from '@/auth/actions/auth-actions'
-import { LogoutButton } from '@/components'
+// import { LogoutButton } from '@/components'
 
 export async function Footer() {
-  const user = await getUserSessionServer()
+  const user = null
 
   return (
     <footer className={styles.footer} >
@@ -18,7 +17,8 @@ export async function Footer() {
             user &&
             <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
           }
-          <LogoutButton />
+          {/* <LogoutButton /> */}
+          <button>close session</button>
           <p>©{new Date().getFullYear()} LyS</p>
         </div>
 

@@ -1,28 +1,22 @@
 import { NextResponse } from 'next/server'
-import { client } from '@/libs/algolia'
+// import { client } from '@/libs/algolia'
 
-export async function GET (request: NextResponse, { params }) {
-    /* const index = client.initIndex('properties') */
+export async function GET(request: Request) {
+  return NextResponse.json({ resp: 'ok' })
+  // const index = client.initIndex('properties')
 
-   /*  try {
-        const params = await request.json()
-        
-        console.log(params);
-        
-        const resp = await index.search(body.query,{
-            params:{
-                filters:"bathroms=2"
-            }
-        })
-        console.log(resp);
+  // try {
+  // const params = await request.json()
 
-        return NextResponse.json({ resp: "ok" })
+  // const resp = await index.search(body.query, {
+  //   params: {
+  //     filters: 'bathroms=2'
+  //   }
+  // })
+  // console.log(resp)
 
-    } catch (error) {
-        const errorJson = JSON.stringify(error)
-        console.log(errorJson);
-
-
-        return NextResponse.json(error, { status: 400 })
-    } */
+  // return NextResponse.json({ resp: 'ok' })
+  // } catch (error) {
+  //   return NextResponse.json(error, { status: 400 })
+  // }
 }

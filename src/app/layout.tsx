@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.css'
 import { AppWrapper } from './context'
-import { AuthProvider } from '@/auth'
 import { Footer, Header } from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,28 +12,26 @@ export const metadata: Metadata = {
   description: 'Explora propiedades exclusivas con Imomubiales. Encuentra, evalúa y guarda tus favoritos en nuestra plataforma inmobiliaria digitalizada.'
 }
 
-export default function RootLayout ({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <AuthProvider>
-      <html lang="es">
-        <body className={inter.className}>
+    <html lang="es">
+      <body className={inter.className}>
 
-          <Header />
+        <Header />
 
-          <AppWrapper>
-            <main style={{ minHeight: '80vh' }}>
-              {children}
-            </main>
-          </AppWrapper>
+        <AppWrapper>
+          <main style={{ minHeight: '80vh' }}>
+            {children}
+          </main>
+        </AppWrapper>
 
-          <Footer />
+        <Footer />
 
-        </body>
-      </html>
-    </AuthProvider>
+      </body>
+    </html>
   )
 }
