@@ -5,7 +5,7 @@ Steps to start the app in development
 ```
 docker-compose up -d
 ```
-2. Rename the .env.example to .env
+2. Copy to .env.example and rename to .env
 3. Replace the enviroment variables
 4. Execute the command:
 ```
@@ -30,7 +30,6 @@ password: user1
 
 # Prisma commands
 ```
-npx prisma init
 npx prisma migrate dev
 npx prisma generate
 ```
