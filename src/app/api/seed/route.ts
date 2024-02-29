@@ -85,7 +85,6 @@ export async function GET() {
   const ratingsData: CreatePropertyRating[] = []
 
   // Crear propiedaes en algolia tambien
-
   const index = client.initIndex('properties')
 
   await index.saveObjects([
