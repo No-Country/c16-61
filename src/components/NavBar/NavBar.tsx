@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 import styles from './NavBar.module.css'
 import { SideBar } from '../SideBar/SideBar'
@@ -14,7 +15,9 @@ export function NavBar (): JSX.Element {
   return (
       <nav className={styles.navbar} >
         <div className={styles.titleContainer}>
-          <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
+          <Link href="/">
+            <img src="./logo.svg" alt="Logo Header" className={styles.logo} />
+          </Link>
           <p className={styles.title}>Imomubiales</p>
         </div>
         <div >

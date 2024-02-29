@@ -1,10 +1,10 @@
 'use client'
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { useFeaturedPropertiesContext, useAllPropertiesContext } from './context'
 import styles from './page.module.css'
 import FeaturedProducts from '@/components/FeaturedProperties/FeaturedProperties'
 import { SearchBar } from '@/components/SearchBar/SearchBar'
-import { SearchResult } from '@/components/SearchResult/SearchResult'
 
 interface Product {
   nombre: string
@@ -26,6 +26,7 @@ export default function HomePage (): JSX.Element {
 
   const contextFeaturedProperties = useFeaturedPropertiesContext()
   const contextAllProperties = useAllPropertiesContext()
+  const router = useRouter()
 
   useEffect(() => {
     const fetchDatos = async () => {
@@ -53,7 +54,7 @@ export default function HomePage (): JSX.Element {
     <div>
       <section className={styles.title} >
         <h1>Inmobiliaria</h1>
-        <SearchBar testArray={contextFeaturedProperties.testArray} />
+        <SearchBar testArray={contextFeaturedProperties.testArray} router={router}/>
       </section>
       <FeaturedProducts testArray={contextFeaturedProperties.testArray} />
     </div>

@@ -1,28 +1,36 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import styles from './SearchBar.module.css'
 import { SearchResult } from '@/components/SearchResult/SearchResult'
 
-export function SearchBar({ testArray }): JSX.Element {
-  const [showResults, setShowResults] = useState(false)
+interface SearchBarProps {
+  testArray: any[]
+  router: any
+  initialShowResults?: boolean
+}
+
+export function SearchBar({ testArray, router, initialShowResults = false }: SearchBarProps): JSX.Element {
+  const [showResults, setShowResults] = useState(initialShowResults)
   const [showFilter, setShowFilter] = useState(true)
 
   const handleSearch = (event) => {
     event.preventDefault()
-    setShowResults(true) // Show search results when the button is clicked
+    setShowResults(true)
+    setShowFilter(true)
+    router.push('/search')
   }
 
   const clearSearch = (event) => {
     event.preventDefault()
-    setShowResults(false) // Hide search results when the button is clicked
+    setShowResults(false)
   }
 
   const handleFilter = (event) => {
     event.preventDefault()
-    setShowFilter(!showFilter) // Cambia el estado actual del filtro cuando el boton es clickeado
+    setShowFilter(!showFilter)
   }
 
   return (
