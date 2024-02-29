@@ -17,9 +17,16 @@ npx prisma migrate dev; npx prisma generate
 ```
 6. Run server with command:
 ```
-pnpm run dev
+npm run dev
 ```
 7. Execute SEED [create local database](http://localhost:3000/api/seed)
+
+# Notes - users default
+user: admin@mail.com
+password: admin123
+
+user: user1@mail.com
+password: user1
 
 # Prisma commands
 ```
