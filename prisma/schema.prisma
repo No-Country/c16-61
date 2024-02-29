@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  admin
+  user
+}
+
 model User {
   id            String    @id @default(uuid())
   email         String    @unique
@@ -19,7 +24,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  roles         String[]  @default(["user"])
+  roles         Role      @default(user)
   isActive      Boolean   @default(true)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime?
