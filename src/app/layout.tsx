@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.css'
 import { AppWrapper } from './context'
+import { ProviderAuth } from '@/auth'
 import { Footer, Header } from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,17 +21,19 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
+        <ProviderAuth>
 
-        <Header />
+          <Header />
 
-        <AppWrapper>
-          <main style={{ minHeight: '80vh' }}>
-            {children}
-          </main>
-        </AppWrapper>
+          <AppWrapper>
+            <main style={{ minHeight: '80vh' }}>
+              {children}
+            </main>
+          </AppWrapper>
 
-        <Footer />
+          <Footer />
 
+        </ProviderAuth>
       </body>
     </html>
   )

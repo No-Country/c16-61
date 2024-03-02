@@ -17,13 +17,13 @@ export async function GET() {
         id: '218da11a-3790-4040-b1f0-d5e6de9d5250',
         email: 'admin@mail.com',
         name: 'Administrador',
-        password: bcrypt.hashSync('admin')
+        password: bcrypt.hashSync('admin123')
       },
       {
         id: '618c01ea-fc81-4ac3-a6b3-bf07d87e607e',
         email: 'user1@mail.com',
         name: 'Usuario 1',
-        password: bcrypt.hashSync('user1')
+        password: bcrypt.hashSync('user01')
       }
     ]
   }

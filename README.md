@@ -26,7 +26,7 @@ user: admin@mail.com
 password: admin123
 
 user: user1@mail.com
-password: user1
+password: user01
 
 # Prisma commands
 ```
