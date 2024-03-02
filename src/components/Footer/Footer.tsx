@@ -18,7 +18,7 @@ export async function Footer() {
             <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
           }
           {/* <LogoutButton /> */}
-          <button>close session</button>
+          {/* <button>close session</button> */}
           <p>©{new Date().getFullYear()} LyS</p>
         </div>
 

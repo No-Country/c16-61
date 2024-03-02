@@ -16,8 +16,25 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
   const [showResults, setShowResults] = useState(initialShowResults)
   const [showFilter, setShowFilter] = useState(true)
 
-  const handleSearch = (event) => {
+  const [arrayResults, setArrayResults] = useState([])
+
+  const handleSearch = async (event) => {
     event.preventDefault()
+
+    const query = event.target.search.value
+    const bathrooms = event.target.bathrooms.value
+    const bedrooms = event.target.bedrooms.value
+    const price = event.target.price.value
+    const rating = event.target.rating.value
+    
+    const results = await fetch(`http://localhost:3000/api/search-properties?query=${query}&bathrooms=${bathrooms}&bedrooms=${bedrooms}`)
+    const resultsJson = await results.json()
+    console.log("resultado fetch", resultsJson);
+    
+    setArrayResults(resultsJson)
+    console.log("resultado state",arrayResults);
+    
+    
     setShowResults(true)
     setShowFilter(true)
     router.push('/search')
@@ -35,7 +52,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
 
   return (
     <section>
-      <form className={styles.searchForm}>
+      <form className={styles.searchForm} onSubmit={(e)=>{handleSearch(e)}}>
         <div>
           {
             showResults &&
@@ -43,10 +60,11 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
           }
           <input
             type="text"
+            id='search'
             className={styles.searchInput}
           />
-          <button className={styles.searchButton} onClick={handleSearch} type="submit"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/search.svg?alt=media&token=76097aa9-40ed-434c-8c76-39952facce6e" alt="buscar" /></button>
-          <button className={styles.searchButton} onClick={handleFilter} type="submit"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/filter2.svg?alt=media&token=6086bfba-b745-47ae-8836-b73520cc57b8" alt="filtrar" /></button>
+          <button className={styles.searchButton} type="submit"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/search.svg?alt=media&token=76097aa9-40ed-434c-8c76-39952facce6e" alt="buscar" /></button>
+          <button className={styles.searchButton} onClick={handleFilter} type="button"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/filter2.svg?alt=media&token=6086bfba-b745-47ae-8836-b73520cc57b8" alt="filtrar" /></button>
         </div>
 
         {
@@ -54,24 +72,24 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
             <div className={styles.filters} >
 
               <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bathfilled.svg?alt=media&token=78b7c5a4-289c-4c87-b0e4-f395f3c31add" alt="baño" /> </InputGroup.Text>
+                <InputGroup.Text id="basicaddon1"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bathfilled.svg?alt=media&token=78b7c5a4-289c-4c87-b0e4-f395f3c31add" alt="baño" /> </InputGroup.Text>
                 <Form.Control
-
+                  id='bathrooms'
                   min={1}
                   max={5}
                   aria-label="Habtiaciones"
-                  aria-describedby="basic-addon1"
+                  aria-describedby="cantidad-baños"
                   type='number'
                 />
               </InputGroup>
               <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bedfilled.svg?alt=media&token=81a6b35c-fc50-45be-a04f-c77da8110356" alt="habitaciones" /></InputGroup.Text>
                 <Form.Control
-
+                  id='bedrooms'
                   min={1}
                   max={10}
                   aria-label="Baños"
-                  aria-describedby="cantidad-baños"
+                  aria-describedby="cantidad-habitaciones"
                   type='number'
                 />
               </InputGroup>
@@ -79,6 +97,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
               <InputGroup className="mb-3">
                 <InputGroup.Text> <img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/starfilled.svg?alt=media&token=893b2383-fd89-4cf6-b492-9011ff74485e" alt="rating" /> </InputGroup.Text>
                 <Form.Control
+                  id='rating'
                   min={1}
                   max={5}
                   type='number'
@@ -88,6 +107,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
               <InputGroup className="mb-3">
                 <InputGroup.Text>$</InputGroup.Text>
                 <Form.Control
+                  id='price'
                   min={5000}
                   max={100000000} type='number'
                   aria-label="costo" />
@@ -96,7 +116,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
           )
         }
       </form>
-      {showResults && <SearchResult testArray={testArray} />}
+      {showResults && <SearchResult testArray={arrayResults} />}
     </section>
   )
 }
