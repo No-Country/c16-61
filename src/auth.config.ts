@@ -57,8 +57,8 @@ export const authConfig: NextAuthConfig = {
       clientSecret: process.env.AUTH_GOOGLE_CLIENT_SECRET
     }),
     Github({
-      clientId: process.env.AUTH_GITHUB_CLIENT_ID,
-      clientSecret: process.env.AUTH_GITHUB_CLIENT_SECRET
+      clientId: process.env.AUTH_GITHUB_ID,
+      clientSecret: process.env.AUTH_GITHUB_SECRET
     })
   ]
 }
