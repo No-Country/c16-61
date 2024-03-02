@@ -1,10 +1,10 @@
-// import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import styles from './OptionList.module.css'
+import { logout } from '@/auth'
 
 export function OptionListComponent({ changesShow }) {
-  // const { data: session } = useSession()
-  // const user = session?.user
-  const user = null
+  const { data: session } = useSession()
+  const user = session?.user
 
   return (
     <>
@@ -24,7 +24,7 @@ export function OptionListComponent({ changesShow }) {
                 <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('MyData') }} >Mi Datos</a>
               </li>
               <li className={styles.navItem}>
-                {/* <a className={`${styles.closeLink} active`} onClick={async () => { await signOut() }} >Cerrar Sesión</a> */}
+                <a className={`${styles.closeLink} active`} onClick={async () => { await logout() }} >Cerrar Sesión</a>
               </li>
             </>)
         }
@@ -33,7 +33,7 @@ export function OptionListComponent({ changesShow }) {
         user &&
         (<>
           <p className={`${styles.navMail}`}>Bienvenido</p>
-          {/* <p className={styles.navMail}>{user?.email}</p> */}
+          <p className={styles.navMail}>{user?.email}</p>
         </>)
       }
     </>

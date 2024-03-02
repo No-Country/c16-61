@@ -1,24 +1,31 @@
-// import { signIn } from 'next-auth/react'
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
+import { useFormState } from 'react-dom'
 import styles from './InitSes.module.css'
+import { authenticate } from '@/auth'
 import { CustomButton } from '@/UI/button/Button'
 import { CustomLogo } from '@/UI/logo/Logo'
 
 export default function InitSesion({ changesShow }): JSX.Element {
+  const router = useRouter()
+  const [state, dispatch] = useFormState(authenticate, undefined)
+
+  useEffect(() => {
+    if (state === 'SuccessSignin') {
+      router.push('/') // redirigir a la pagina principal
+      // cerrar sidebar
+    }
+  }, [state])
+
   function initSesionWithAuth(appToLogin: string) {
     // signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
   }
 
-  async function InitSesion(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    // const email = (event.currentTarget.elements.namedItem('inputEmail') as HTMLInputElement).value
-    // const password = (event.currentTarget.elements.namedItem('inputPassword') as HTMLInputElement).value
-
-    // await signIn('credentials', { email, password, callbackUrl: 'http://localhost:3000' })
-  }
-
   return (
-    <Form className={styles.container} onSubmit={async (e) => { await InitSesion(e) }}>
+    <Form action={dispatch} className={styles.container} >
       <h4 className={styles.title}>Iniciar Sesión</h4>
       <div className={styles.containerInput}>
         <Form.Label htmlFor="inputEmail">Email</Form.Label>
@@ -26,6 +33,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
           type="email"
           id="inputEmail"
           placeholder="name@example.com"
+          name='email'
           required
         />
       </div>
@@ -35,6 +43,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
           type="password"
           id="inputPassword"
           placeholder="******"
+          name='password'
           required
         />
       </div>
