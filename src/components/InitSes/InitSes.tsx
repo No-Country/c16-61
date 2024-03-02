@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useFormState } from 'react-dom'
@@ -10,13 +9,12 @@ import { CustomButton } from '@/UI/button/Button'
 import { CustomLogo } from '@/UI/logo/Logo'
 
 export default function InitSesion({ changesShow }): JSX.Element {
-  const router = useRouter()
   const [state, dispatch] = useFormState(authenticate, undefined)
 
   useEffect(() => {
     if (state === 'SuccessSignin') {
-      router.push('/') // redirigir a la pagina principal
       // cerrar sidebar
+      window.location.replace('/')
     }
   }, [state])
 

@@ -4,13 +4,13 @@ import { logout } from '@/auth'
 
 export function OptionListComponent({ changesShow }) {
   const { data: session } = useSession()
-  const user = session?.user
+  const isAuthenticated = !!session?.user
 
   return (
     <>
       <ul className={`${styles.nav} nav flex-column`}>
         {
-          !user
+          !isAuthenticated
             ? (<>
               <li className={styles.navItem}>
                 <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('InitSesion') }}>Iniciar Sesión</a>
@@ -30,10 +30,10 @@ export function OptionListComponent({ changesShow }) {
         }
       </ul >
       {
-        user &&
+        isAuthenticated &&
         (<>
           <p className={`${styles.navMail}`}>Bienvenido</p>
-          <p className={styles.navMail}>{user?.email}</p>
+          <p className={styles.navMail}>{session.user?.email}</p>
         </>)
       }
     </>
