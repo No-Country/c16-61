@@ -1,5 +1,6 @@
 'use client'
 
+import { signIn } from 'next-auth/react'
 import { useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useFormState } from 'react-dom'
@@ -19,7 +20,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
   }, [state])
 
   function initSesionWithAuth(appToLogin: string) {
-    // signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
+    signIn(appToLogin, { callbackUrl: 'http://localhost:3000' })
   }
 
   return (
