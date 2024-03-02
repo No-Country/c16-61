@@ -59,9 +59,17 @@
   font-size: 15px;
 }
 
-@media (width < 860px) {
-  .redes{
-    padding-top: 2rem;
+@media (max-width: 480px) {
+  .Conteiner {
+    flex-direction: column;
+    height: auto;
+  }
+  .redes, .infOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
     margin: 0;
   }
 }
