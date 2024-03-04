@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import styles from './SearchBar.module.css'
 import { SearchResult } from '@/components/SearchResult/SearchResult'
+import { useQueryParamsContext } from '@/app/context'
 
 interface SearchBarProps {
   testArray: any[]
@@ -16,28 +17,26 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
   const [showResults, setShowResults] = useState(initialShowResults)
   const [showFilter, setShowFilter] = useState(true)
 
-  const [arrayResults, setArrayResults] = useState([])
+  const { queryParams, setQueryParams } = useQueryParamsContext()
 
   const handleSearch = async (event) => {
     event.preventDefault()
 
+    
     const query = event.target.search.value
     const bathrooms = event.target.bathrooms.value
     const bedrooms = event.target.bedrooms.value
     const price = event.target.price.value
     const rating = event.target.rating.value
-    
-    const results = await fetch(`http://localhost:3000/api/search-properties?query=${query}&bathrooms=${bathrooms}&bedrooms=${bedrooms}`)
-    const resultsJson = await results.json()
-    console.log("resultado fetch", resultsJson);
-    
-    setArrayResults(resultsJson)
-    console.log("resultado state",arrayResults);
-    
-    
+
+    setQueryParams({ query, bathrooms, bedrooms, price, rating })
+
     setShowResults(true)
     setShowFilter(true)
-    router.push('/search')
+    if(window.document.location.pathname == "/"){
+      router.push('/search')
+    }
+
   }
 
   const clearSearch = (event) => {
@@ -51,7 +50,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
   }
 
   return (
-    <section>
+    <section className={styles.section}>
       <form className={styles.searchForm} onSubmit={(e)=>{handleSearch(e)}}>
         <div>
           {
@@ -116,7 +115,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
           )
         }
       </form>
-      {showResults && <SearchResult testArray={arrayResults} />}
+      {showResults && <SearchResult  />}
     </section>
   )
 }

@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Footer.module.css'
@@ -26,11 +28,11 @@ export async function Footer() {
           <h3>Redes</h3>
           <div className={styles.twitter} >
             <Image src={twitterLogo} alt='redes' width={25} height={25} priority={true} />
-            <p>My E-commerce</p>
+            <p className={styles.link} onClick={() => { window.open('https://twitter.com') }}>Twitter</p>
           </div>
           <div className={styles.instagram} >
             <Image src={instagramLogo} alt='redes' width={25} height={25} priority={true} />
-            <p>My E-commerce</p>
+            <p className={styles.link} onClick={() => { window.open('https://instagram.com') }}>Instagram</p>
           </div>
         </div>
       </div>

@@ -46,8 +46,8 @@ export default function HomePage(): JSX.Element {
         const response = await fetch('http://localhost:3000/api/featured-properties')
         const data = await response.json()
 
-        contextAllProperties.setAllProperties(testArrayPrueba)
-
+        console.log(data);
+        
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {
           newArray.push(data[index])
