@@ -35,16 +35,16 @@ export function SearchResult ( ): JSX.Element {
             <h3 className={styles.title}>Search Results</h3>
             <div className={styles.cardContainer}>
             {propertiesArray.map((item, index) => (
-                <Card key={index} style={{ width: '18rem' }} className={styles.card} onClick={() => { router.push(`/product/${item.id}`) }}>
+                <Card key={index} style={{ width: '18rem' }} className={styles.card} >
                     <Card.Img variant="top" src={item.img} className={styles.img} />
                     <Card.Body>
-                        <Card.Title>{item.name}</Card.Title>
+                        <Card.Title>{item.name}</Card.Title> 
                         <Card.Text>
                             <p>Precio: ${item.price}</p>
                             <p>Habitaciones: {item.bedrooms}</p>
                             <p>Baños: {item.bathrooms}</p>
                         </Card.Text>
-                        <Button variant="primary">Contactanos</Button>
+                        <Button onClick={() => { router.push(`/product/${item.id}`) }} variant="primary">Mas Info</Button>
                     </Card.Body>
                 </Card>
             ))}

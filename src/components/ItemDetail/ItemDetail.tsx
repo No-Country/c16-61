@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card'
 import style from './ItemDetail.module.css'
 
 import { useFeaturedPropertiesContext } from '@/app/context'
+import { useState } from 'react'
+import Link from 'next/link'
 /* interface Product {
   nombre: string
   precio: number
@@ -18,6 +20,11 @@ import { useFeaturedPropertiesContext } from '@/app/context'
 } */
 
 export default function ItemDetail() {
+
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => { setShow(false) }
+  
   const context = useFeaturedPropertiesContext()
   const id = useParams().id
 
@@ -80,12 +87,8 @@ export default function ItemDetail() {
             />
             <span>{item.rating}</span>
           </Card.Text>
-          <Button className={style.buttons} variant="primary">
-            Añadir a favoritos
-          </Button>
-          <Button className={style.buttons} variant="primary">
-            Puntuar
-          </Button>
+          {/* este es un link que envia un mail con el asunto de Estoy interesado en el item.name */}
+            <a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + name } >Contacto</a>
         </Card.Body>
       </Card>
     </article>
