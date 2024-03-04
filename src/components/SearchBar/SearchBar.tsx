@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { type SetStateAction, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import styles from './SearchBar.module.css'
@@ -26,10 +26,15 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
     const query = event.target.search.value
     const bathrooms = event.target.bathrooms.value
     const bedrooms = event.target.bedrooms.value
-    const price = event.target.price.value
-    const rating = event.target.rating.value
+    // const price = event.target.price.value
+    // const rating = event.target.rating.value
 
-    setQueryParams({ query, bathrooms, bedrooms, price, rating })
+    const results = await fetch(`http://localhost:3000/api/search-properties?query=${query}&bathrooms=${bathrooms}&bedrooms=${bedrooms}`)
+    const resultsJson: SetStateAction<never[]> = await results.json()
+    // console.log('resultado fetch', resultsJson)
+
+    setArrayResults(resultsJson)
+    // console.log('resultado state', arrayResults)
 
     setShowResults(true)
     setShowFilter(true)
@@ -50,7 +55,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
   }
 
   return (
-    <section className={styles.section}>
+    <section>
       <form className={styles.searchForm} onSubmit={(e)=>{handleSearch(e)}}>
         <div>
           {
