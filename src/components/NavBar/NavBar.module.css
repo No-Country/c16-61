@@ -23,13 +23,15 @@
   align-items: center;
 }
 
-.logo{
+.logo {
   width: 50px;
   height: 50px;
 }
 
-.buttonNew{
-  width: 150px;
+.buttonNew {
+  display: block;
+  font-size: 12px;
+  width: 200px;
 }
 
 .buttonNew button:hover {

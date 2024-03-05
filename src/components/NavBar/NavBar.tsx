@@ -1,13 +1,18 @@
 'use client'
 
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import { useState } from 'react'
 import styles from './NavBar.module.css'
 import { SideBar } from '../SideBar/SideBar'
+
 import { CustomButton } from '@/UI/button/Button'
 
 export function NavBar(): JSX.Element {
   const [show, setShow] = useState(false)
+
+  const { data: session } = useSession()
+  const user = session?.user
 
   const handleClose = () => { setShow(false) }
   const handleShow = () => { setShow(true) }
@@ -21,7 +26,12 @@ export function NavBar(): JSX.Element {
         <p className={styles.title}>Imomubiales</p>
       </div>
       <div >
-        <CustomButton className={styles.buttonNew} text="Iniciar Sesión" variant="primary" onClick={handleShow} ></CustomButton>
+        {
+          user
+            ? <CustomButton className={styles.buttonNew} text={`Bienvenido ${user.name} `} variant="primary" onClick={handleShow} ></CustomButton>
+            : <CustomButton className={styles.buttonNew} text="Iniciar Sesión" variant="primary" onClick={handleShow} ></CustomButton>
+        }
+
       </div>
       <SideBar show={show} handleClose={handleClose} />
     </nav>

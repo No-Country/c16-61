@@ -1,23 +1,28 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 400px;
+    height: 100vh;
 }
 
-.containerInput{
-    margin: 5px;
+
+.card {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    height: 70vh;
 }
 
-.title{
+.card img {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20%;
+}
+
+.title {
     color: white;
 }
 
-.button{
+.button {
     margin-top: 15px;
 }

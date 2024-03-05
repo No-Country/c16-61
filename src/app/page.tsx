@@ -46,8 +46,8 @@ export default function HomePage(): JSX.Element {
         const response = await fetch('http://localhost:3000/api/featured-properties')
         const data = await response.json()
 
-        console.log(data);
-        
+        console.log(data)
+
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {
           newArray.push(data[index])
@@ -64,7 +64,7 @@ export default function HomePage(): JSX.Element {
   return (
     <div>
       <section className={styles.title} >
-        <h1>Inmobiliaria</h1>
+        <h1>Imomubiales S.A</h1>
         <SearchBar testArray={contextFeaturedProperties.testArray} router={router} />
       </section>
       <FeaturedProducts testArray={contextFeaturedProperties.testArray} />

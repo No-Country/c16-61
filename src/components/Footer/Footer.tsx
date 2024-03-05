@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,7 +6,6 @@ import styles from './Footer.module.css'
 import { LogoutButton } from '..'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
-// import { LogoutButton } from '@/components'
 
 export async function Footer() {
   const user = null

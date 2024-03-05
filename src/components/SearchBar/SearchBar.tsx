@@ -4,8 +4,9 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import styles from './SearchBar.module.css'
-import { SearchResult } from '@/components/SearchResult/SearchResult'
 import { useQueryParamsContext } from '@/app/context'
+import { SearchResult } from '@/components/SearchResult/SearchResult'
+import { notify } from '@/notifications/Notification'
 
 interface SearchBarProps {
   testArray: any[]
@@ -22,7 +23,6 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
   const handleSearch = async (event) => {
     event.preventDefault()
 
-    
     const query = event.target.search.value
     const bathrooms = event.target.bathrooms.value
     const bedrooms = event.target.bedrooms.value
@@ -30,15 +30,13 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
     const rating = event.target.rating.value
 
     setQueryParams({ query, bathrooms, bedrooms, price, rating })
-    console.log("query params", queryParams);
-    
+    console.log('query params', queryParams)
 
     setShowResults(true)
     setShowFilter(true)
-    if(window.document.location.pathname == "/"){
+    if (window.document.location.pathname == '/') {
       router.push('/search')
     }
-
   }
 
   const clearSearch = (event) => {
@@ -48,12 +46,13 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
 
   const handleFilter = (event) => {
     event.preventDefault()
+    notify('Funciono')
     setShowFilter(!showFilter)
   }
 
   return (
     <section className={styles.section}>
-      <form className={styles.searchForm} onSubmit={(e)=>{handleSearch(e)}}>
+      <form className={styles.searchForm} onSubmit={(e) => { handleSearch(e) }}>
         <div>
           {
             showResults &&
@@ -117,7 +116,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
           )
         }
       </form>
-      {showResults && <SearchResult  />}
+      {showResults && <SearchResult />}
     </section>
   )
 }
