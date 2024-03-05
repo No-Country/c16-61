@@ -17,7 +17,8 @@ export async function GET() {
         id: '218da11a-3790-4040-b1f0-d5e6de9d5250',
         email: 'admin@mail.com',
         name: 'Administrador',
-        password: bcrypt.hashSync('admin123')
+        password: bcrypt.hashSync('admin123'),
+        roles: 'admin'
       },
       {
         id: '618c01ea-fc81-4ac3-a6b3-bf07d87e607e',
