@@ -24,14 +24,17 @@
   text-align: center;
 }
 
+.navItem a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .navMail {
   margin: 0;
 }
-.closeLink {
-  margin-top: 4vh;
-  text-align: center;
+
+.navItem .closeLink {
   color: #e65b7c;
-  text-decoration: none;
 }
 
 .closeLink a:hover {

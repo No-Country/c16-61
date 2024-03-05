@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import styles from './OptionList.module.css'
 import { logout } from '@/auth'
@@ -23,6 +24,14 @@ export function OptionListComponent({ changesShow }) {
               <li className={styles.navItem}>
                 <a className={`${styles.navLink} active`} onClick={(e) => { e.preventDefault(); changesShow('MyData') }} >Mi Datos</a>
               </li>
+              {
+                isAuthenticated && session.user?.roles?.includes('admin') &&
+                <li className={`${styles.navItem}`}>
+                  <Link href='/dashboard'>
+                    Panel de administrador
+                  </Link>
+                </li>
+              }
               <li className={styles.navItem}>
                 <a className={`${styles.closeLink} active`} onClick={async () => { await logout() }} >Cerrar Sesión</a>
               </li>

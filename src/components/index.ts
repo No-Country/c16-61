@@ -6,5 +6,8 @@ export { Header } from '@/components/Header/Header'
 export { SearchBar } from '@/components/SearchBar/SearchBar'
 
 // Next Auth
-// buttons
 export { LogoutButton } from '@/components/LogoutButton'
+
+// Properties
+export { PropertiesGrid } from '@/components/dashboard/PropertiesGrid'
+export { PropertiesGridItem } from '@/components/dashboard/PropertiesGridItem'
