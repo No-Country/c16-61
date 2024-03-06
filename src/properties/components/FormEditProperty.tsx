@@ -3,6 +3,7 @@
 import { type Property } from '@prisma/client'
 import Link from 'next/link'
 import { useFormState } from 'react-dom'
+import styles from './formEditProperty.module.css'
 import { type UpdateProperty, editProperty } from '@/properties'
 
 interface EditPropertyProps {
@@ -19,53 +20,53 @@ export function FormEditProperty({ property }: EditPropertyProps) {
 
   return (
     <>
-      <form action={dispatch} style={{ display: 'flex', flexDirection: 'column' }}>
-        <label htmlFor="name">Nombre de la propiedad:</label>
+      <form action={dispatch} className={styles.form}>
+        <label htmlFor="name" className={styles.label}>Nombre de la propiedad:</label>
         <input
           type="text"
           name="name"
-          defaultValue={property.name}
+          defaultValue={property.name} className={styles.input}
         />
 
-        <label htmlFor="coveredArea">Area de la propiedad:</label>
+        <label htmlFor="coveredArea" className={styles.label}>Area de la propiedad:</label>
         <input
           type="number"
           name="coveredArea"
-          defaultValue={property.coveredArea}
+          defaultValue={property.coveredArea} className={styles.input}
         />
 
-        <label htmlFor="totalLandArea">Area total la propiedad:</label>
+        <label htmlFor="totalLandArea" className={styles.label}>Area total la propiedad:</label>
         <input
           type="number"
           name="totalLandArea"
-          defaultValue={property.totalLandArea}
+          defaultValue={property.totalLandArea} className={styles.input}
         />
 
-        <label htmlFor="bathrooms">Número de baños:</label>
+        <label htmlFor="bathrooms" className={styles.label}>Número de baños:</label>
         <input
           type="number"
           name="bathrooms"
-          defaultValue={property.bathrooms}
+          defaultValue={property.bathrooms} className={styles.input}
         />
 
-        <label htmlFor="bedrooms">Número de habitaciones:</label>
+        <label htmlFor="bedrooms" className={styles.label}>Número de habitaciones:</label>
         <input
           type="number"
           name="bedrooms"
-          defaultValue={property.bedrooms}
+          defaultValue={property.bedrooms} className={styles.input}
         />
 
-        <label htmlFor="price">Precio:</label>
+        <label htmlFor="price" className={styles.label}>Precio:</label>
         <input
           type="number"
           name="price"
-          defaultValue={property.price}
+          defaultValue={property.price} className={styles.input}
         />
 
         {/* amenities */}
-        <fieldset>
-          <legend>Comodidades:</legend>
-          <div>
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.label}>Comodidades:</legend>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="escuela"
@@ -75,21 +76,21 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="escuela">Escuela</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input type="checkbox" id="gimnasio" name="amenities" value="Gimnasio" />
             <label htmlFor="gimnasio">Gimnasio</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input type="checkbox" id="seguridad" name="amenities" value="Seguridad" />
             <label htmlFor="seguridad">Seguridad</label>
           </div>
         </fieldset>
 
         {/* services */}
-        <fieldset>
-          <legend>Servicios:</legend>
-          <div>
-            <input
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.label}>Servicios:</legend>
+          <div className={styles.checkbox}>
+          <input
               type="checkbox"
               id="agua"
               name="services"
@@ -98,7 +99,7 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="agua">Agua</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="gas"
@@ -108,7 +109,7 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="gas">Gas</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="internet"
@@ -121,9 +122,9 @@ export function FormEditProperty({ property }: EditPropertyProps) {
         </fieldset>
 
         {/* nearbyPlaces */}
-        <fieldset>
-          <legend>Lugares cercanos:</legend>
-          <div>
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.label}>Lugares cercanos:</legend>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="escuela"
@@ -133,7 +134,7 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="escuela">Escuela Primaria</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="estacion"
@@ -143,7 +144,7 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="estacion">Estación de Servicio</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="parque"
@@ -156,9 +157,9 @@ export function FormEditProperty({ property }: EditPropertyProps) {
         </fieldset>
 
         {/* nearbyBusStops */}
-        <fieldset>
-          <legend>Paradas de autobus:</legend>
-          <div>
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.label}>Paradas de autobus:</legend>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="paradaEscuela"
@@ -168,7 +169,7 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             />
             <label htmlFor="paradaEscuela">Parada de Escuela</label>
           </div>
-          <div>
+          <div className={styles.checkbox}>
             <input
               type="checkbox"
               id="paradaCentro"
@@ -181,13 +182,12 @@ export function FormEditProperty({ property }: EditPropertyProps) {
         </fieldset>
 
         {/* buttons */}
-        <div className='mt-6 flex justify-end gap-4'>
+        <div className={styles.fieldset}>
           <Link
             href='/dashboard'
           >
-            Cancelar
-          </Link>
-          <button >Actualizar propiedad</button>
+          <button className={styles.cancelButton}>Cancelar</button></Link>
+          <button className={styles.createButton}>Actualizar propiedad</button>
         </div>
       </form>
       {

@@ -49,6 +49,20 @@
   padding: 5px;
 }
 
+.edit {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editicon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 30%;
+  padding: 5px;
+}
+
 .detailInfo {
   display: flex;
   flex-direction: column;
