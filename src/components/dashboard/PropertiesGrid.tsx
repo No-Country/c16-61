@@ -1,4 +1,5 @@
 import { type Property } from '@prisma/client'
+import styles from './PropertiesGrid.module.css'
 import { PropertiesGridItem } from '..'
 
 interface PropertiesGridProps {
@@ -7,12 +8,12 @@ interface PropertiesGridProps {
 
 export const PropertiesGrid = ({ properties }: PropertiesGridProps) => {
   return (
-    <div className='grid grid-cols-2 sm:grid-cols-3 gap-10 mb-10'>
-      {
-        properties.map((property) => (
-          <PropertiesGridItem key={property.id} property={property} />
-        ))
-      }
+    <div className={styles.propertiesGrid}>
+      {properties.map((property) => (
+        <div className={styles.propertiesGridItem} key={property.id}>
+        <PropertiesGridItem property={property} />
+      </div>
+      ))}
     </div>
   )
 }

@@ -1,0 +1,69 @@
+.propertyContainer {
+  border: 1px solid #e3e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.propertyTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.propertyDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  .propertyDetails {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+  }
+}
+
+.propertySection {
+  margin-top: 6%;
+}
+
+.propertySectionTitle {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+.propertyDetail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  background-color: rgb(125, 145, 163);
+  border-radius: 30%;
+  padding: 5px;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 1rem;
+}
+
+.detailValue {
+  color: rgb(125, 145, 163);
+  font-size: 0.9rem;
+}
+.propertyFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}

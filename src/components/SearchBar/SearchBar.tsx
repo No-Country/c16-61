@@ -14,7 +14,7 @@ interface SearchBarProps {
   initialShowResults?: boolean
 }
 
-export function SearchBar({ testArray, router, initialShowResults = false }: SearchBarProps): JSX.Element {
+export function SearchBar({ router, initialShowResults = false }: SearchBarProps): JSX.Element {
   const [showResults, setShowResults] = useState(initialShowResults)
   const [showFilter, setShowFilter] = useState(true)
 
@@ -34,7 +34,7 @@ export function SearchBar({ testArray, router, initialShowResults = false }: Sea
 
     setShowResults(true)
     setShowFilter(true)
-    if (window.document.location.pathname == '/') {
+    if (window.document.location.pathname === '/') {
       router.push('/search')
     }
   }

@@ -1,34 +1,23 @@
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import styles from './SearchResult.module.css'
 import { useQueryParamsContext } from '@/app/context'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import { any } from 'zod'
 
-export function SearchResult ( ): JSX.Element {
+export function SearchResult (): JSX.Element {
   const router = useRouter()
   const [propertiesArray, setPropertiesArray] = useState([]) as any
 
   const { queryParams } = useQueryParamsContext()
-  
-
-    useEffect(() => {
-       const fetching = async () => {
-         const results =  await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}&bathrooms=${queryParams.bathrooms}&bedrooms=${queryParams.bedrooms}`)
-         const data = await results.json()
-         
-         console.log(data);
-         setPropertiesArray(data)
-         console.log(propertiesArray);
-         
-         
-       }
-
-       fetching()
-
-    },[queryParams])
+  useEffect(() => {
+    const fetching = async () => {
+      const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}&bathrooms=${queryParams.bathrooms}&bedrooms=${queryParams.bedrooms}`)
+      const data = await results.json()
+      setPropertiesArray(data)
+    }
+    fetching()
+  }, [queryParams])
 
   return (
         <div>
@@ -38,7 +27,7 @@ export function SearchResult ( ): JSX.Element {
                 <Card key={index} style={{ width: '18rem' }} className={styles.card} >
                     <Card.Img variant="top" src={item.img} className={styles.img} />
                     <Card.Body>
-                        <Card.Title>{item.name}</Card.Title> 
+                        <Card.Title>{item.name}</Card.Title>
                         <Card.Text>
                             <p>Precio: ${item.price}</p>
                             <p>Habitaciones: {item.bedrooms}</p>
