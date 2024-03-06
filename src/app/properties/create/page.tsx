@@ -1,9 +1,10 @@
+import styles from './createProperty.module.css'
 import { FormNewProperty } from '@/properties'
 
 const NewPropertyPage = () => {
   return (
     <>
-      <div>Página de Formulario de propiedad</div>
+      <h1 className={styles.title}>Añade una Propiedad</h1>
 
       <FormNewProperty />
     </>
