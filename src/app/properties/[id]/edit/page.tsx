@@ -11,8 +11,6 @@ const PropertyEditPage = async ({ params }: PropertyPageProps) => {
   const id = params.id
   const property = await fetchPropertyById(id)
 
-  console.log('property', property)
-
   return (
     <>
       <div>PropertyEditPage</div>

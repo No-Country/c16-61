@@ -28,8 +28,11 @@ export function NavBar(): JSX.Element {
       <div >
         {
           user
-            ? <CustomButton className={styles.buttonNew} text={`Bienvenido ${user.name} `} variant="primary" onClick={handleShow} ></CustomButton>
-            : <CustomButton className={styles.buttonNew} text="Iniciar Sesión" variant="primary" onClick={handleShow} ></CustomButton>
+            ? <div className={styles.navbarMenu}>
+              <p>{`Hola ${user.name} `}</p>
+              <CustomButton className={styles.buttonMenu} text="=" variant="primary" onClick={handleShow} ></CustomButton>
+            </div>
+            : <CustomButton className={styles.buttonMenu} text="=" variant="primary" onClick={handleShow} ></CustomButton>
         }
 
       </div>

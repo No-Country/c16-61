@@ -28,7 +28,7 @@ export function OptionListComponent({ changesShow }) {
                 isAuthenticated && session.user?.roles?.includes('admin') &&
                 <li className={`${styles.navItem}`}>
                   <Link href='/dashboard'>
-                    Panel de administrador
+                    Propiedades
                   </Link>
                 </li>
               }
