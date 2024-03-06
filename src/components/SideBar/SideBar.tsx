@@ -41,4 +41,3 @@ export function SideBar (props: SideBarProps): JSX.Element {
     </Offcanvas>
   )
 }
-

@@ -1,11 +1,11 @@
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import style from './ItemDetail.module.css'
 
 import { useFeaturedPropertiesContext } from '@/app/context'
-import { useState } from 'react'
-import Link from 'next/link'
 /* interface Product {
   nombre: string
   precio: number
@@ -20,11 +20,10 @@ import Link from 'next/link'
 } */
 
 export default function ItemDetail() {
-
   const [show, setShow] = useState(false)
 
   const handleClose = () => { setShow(false) }
-  
+
   const context = useFeaturedPropertiesContext()
   const id = useParams().id
 

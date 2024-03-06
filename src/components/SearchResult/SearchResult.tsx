@@ -12,9 +12,27 @@ export function SearchResult (): JSX.Element {
   const { queryParams } = useQueryParamsContext()
   useEffect(() => {
     const fetching = async () => {
-      const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}&bathrooms=${queryParams.bathrooms}&bedrooms=${queryParams.bedrooms}`)
-      const data = await results.json()
-      setPropertiesArray(data)
+      if (Object.keys(queryParams).length == 1) {
+        const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}`)
+        const data = await results.json()
+        setPropertiesArray(data)
+        console.log('if')
+      } else {
+        let fetchString = 'http://localhost:3000/api/search-properties?'
+        const params = Object.keys(queryParams)
+        /* quiero iterar las propiedades de prueba */
+        for (let index = 0; index < params.length; index++) {
+          if (index == 0) {
+            fetchString += `${params[index]}=${queryParams[params[index]]}`
+          } else {
+            fetchString += `&${params[index]}=${queryParams[params[index]]}`
+          }
+        }
+
+        const results = await fetch(fetchString)
+        const data = await results.json()
+        setPropertiesArray(data)
+      }
     }
     fetching()
   }, [queryParams])

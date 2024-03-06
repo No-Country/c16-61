@@ -27,9 +27,24 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
     const bathrooms = event.target.bathrooms.value
     const bedrooms = event.target.bedrooms.value
     const price = event.target.price.value
-    const rating = event.target.rating.value
 
-    setQueryParams({ query, bathrooms, bedrooms, price, rating })
+    const paramsObject = {} as any
+
+    paramsObject.query = query
+
+    if (bathrooms) {
+      paramsObject.bathrooms = bathrooms
+    }
+
+    if (bedrooms) {
+      paramsObject.bedrooms = bedrooms
+    }
+
+    if (price) {
+      paramsObject.price = price
+    }
+
+    setQueryParams(paramsObject)
     console.log('query params', queryParams)
 
     setShowResults(true)
@@ -93,17 +108,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
                   type='number'
                 />
               </InputGroup>
-
-              <InputGroup className="mb-3">
-                <InputGroup.Text> <img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/starfilled.svg?alt=media&token=893b2383-fd89-4cf6-b492-9011ff74485e" alt="rating" /> </InputGroup.Text>
-                <Form.Control
-                  id='rating'
-                  min={1}
-                  max={5}
-                  type='number'
-                  aria-label="rating" />
-              </InputGroup>
-
               <InputGroup className="mb-3">
                 <InputGroup.Text>$</InputGroup.Text>
                 <Form.Control

@@ -13,7 +13,7 @@ export function AppWrapper ({ children }: Readonly<{
   const [testArray, setTestArray] = useState([])
 
   const [allProperties, setAllProperties] = useState([])
-  
+
   const [queryParams, setQueryParams] = useState({})
 
   return (
