@@ -1,4 +1,5 @@
 import { type Property } from '@prisma/client'
+import Link from 'next/link'
 import style from './PropertiesGridItem.module.css'
 
 interface PropertiesGridItemProps {
@@ -9,6 +10,7 @@ export const PropertiesGridItem = ({ property }: PropertiesGridItemProps) => {
   return (
 
     <div className={style.propertyContainer}>
+      <Link href={`/properties/${property.id}/edit`} >Editar</Link>
       <h2 className={style.propertyTitle}>{property.name}</h2>
       <span className={style.detailValue}>${property.price}</span>
       <div className={style.propertySection}><p className={style.propertySectionTitle}>Detalles</p>
