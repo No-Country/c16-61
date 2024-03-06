@@ -23,7 +23,7 @@ export function NavBar(): JSX.Element {
         <Link href="/">
           <img src="./logoHeader.svg" alt="Logo Header" className={styles.logo} />
         </Link>
-        <p className={styles.title}>Imomubiales</p>
+        <p className={styles.title}><a href='/' className={styles.link}>Imomubiales</a></p>
       </div>
       <div >
         {

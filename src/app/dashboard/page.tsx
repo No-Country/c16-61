@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation'
+import style from './dashboard.module.css'
 import { getUserSessionServer } from '@/auth'
 import { PropertiesGrid } from '@/components'
 import prisma from '@/libs/prisma'
@@ -13,9 +14,9 @@ const DashboardPage = async () => {
   const properties = await prisma.property.findMany()
 
   return (
-    <div>
-      <h1>Panel de administrador</h1>
-      <p>Bienvenido al panel de administrador.</p>
+    <div className={style.page}>
+      <h1 className={style.title}>Panel de administrador</h1>
+      <p className={style.subtitle}>Bienvenido al panel de administrador. A continuación tienes tus propiedades publicadas:</p>
 
       <ButtonAddProperty />
 
