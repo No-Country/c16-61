@@ -1,3 +1,3 @@
 import { type Property } from '@prisma/client'
 
-export type DashboardProperty = Omit<Property, 'id' | 'createdAt' | 'updatedAt'>
+export type CreateProperty = Omit<Property, 'id' | 'createdAt' | 'updatedAt'>

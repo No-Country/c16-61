@@ -1,2 +1,5 @@
 export { SearchProperties } from './actions/search'
-export type { DashboardProperty } from './interfaces/properties'
+export { createProperty } from './actions/create-property'
+export type { CreateProperty } from './interfaces/properties'
+export { FormNewProperty } from './components/FormNewProperty'
+export { ButtonAddProperty } from './components/ButtonAddProperty'

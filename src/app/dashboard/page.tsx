@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getUserSessionServer } from '@/auth'
 import { PropertiesGrid } from '@/components'
 import prisma from '@/libs/prisma'
+import { ButtonAddProperty } from '@/properties'
 
 const DashboardPage = async () => {
   const user = await getUserSessionServer()
@@ -15,6 +16,8 @@ const DashboardPage = async () => {
     <div>
       <h1>Panel de administrador</h1>
       <p>Bienvenido al panel de administrador.</p>
+
+      <ButtonAddProperty />
 
       <PropertiesGrid properties={properties} />
     </div>
