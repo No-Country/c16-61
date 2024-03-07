@@ -22,7 +22,7 @@ const DashboardPage = async () => {
 
       {properties.length > 0
         ? (<PropertiesGrid properties={properties} />)
-        : (<h2>Proximamente</h2>)}
+        : (<h2>Próximamente</h2>)}
     </div>
   )
 }
