@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs'
 import { NextResponse } from 'next/server'
 import { client } from '@/libs/algolia'
+import cloudinary from '@/libs/cloudinary'
 import prisma from '@/libs/prisma'
 import { type CreatePropertyRating } from '@/properties-raking'
 
@@ -14,6 +15,8 @@ export async function GET() {
   const index = client.initIndex('properties')
   // clean Algolia index before starting seeding new data
   await index.clearObjects()
+  // clean cloudinary
+  await cloudinary.api.delete_resources_by_prefix('imomubiales')
 
   // Crear usuarios de prueba
   await prisma.user.createMany({
