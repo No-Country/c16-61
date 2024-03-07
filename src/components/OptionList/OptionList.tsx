@@ -41,7 +41,7 @@ export function OptionListComponent({ changesShow }) {
       {
         isAuthenticated &&
         (<>
-          <p className={`${styles.navMail}`}>Bienvenido</p>
+          <p>Bienvenido</p>
           <p className={styles.navMail}>{session.user?.email}</p>
         </>)
       }

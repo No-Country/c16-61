@@ -1,39 +1,45 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 450px;
 }
 
 .containerInput {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .containerLogos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .title {
-    color: white;
+  color: white;
 }
 
 .button {
-    width: 150px;
+  width: 150px;
+  background-color: #067bc2;
+  color: white;
+}
+
+.buttonReturn {
+  background-color: #067bc2;
+  color: white;
 }
 
 .googleLogo {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .githubLogo {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }

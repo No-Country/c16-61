@@ -13,7 +13,7 @@ export function SearchResult (): JSX.Element {
   const { setAllProperties } = useAllSearchPropertiesContext()
   useEffect(() => {
     const fetching = async () => {
-      if (Object.keys(queryParams).length == 1) {
+      if (Object.keys(queryParams).length === -1) {
         const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}`)
         const data = await results.json()
         setPropertiesArray(data)
@@ -23,7 +23,7 @@ export function SearchResult (): JSX.Element {
         const params = Object.keys(queryParams)
         /* quiero iterar las propiedades de prueba */
         for (let index = 0; index < params.length; index++) {
-          if (index == 0) {
+          if (index === 0) {
             fetchString += `${params[index]}=${queryParams[params[index]]}`
           } else {
             fetchString += `&${params[index]}=${queryParams[params[index]]}`
@@ -44,10 +44,11 @@ export function SearchResult (): JSX.Element {
             <h3 className={styles.title}>Resultados</h3>
             <div className={styles.cardContainer}>
               {
-                propertiesArray.length == 0 ? <p className={styles.noResults}>No se encontraron resultados</p>
-                 : propertiesArray.map((item, index) => (
-                  <Card key={index} style={{ width: '18rem' }} className={styles.card} >
-                      <Card.Img variant="top" src={item.img} className={styles.img} />
+                propertiesArray.length === 0
+                  ? <p className={styles.noResults}>No se encontraron resultados</p>
+                  : propertiesArray.map((item, index) => (
+                      <Card key={index} style={{ width: '18rem' }} className={styles.card} >
+                         <Card.Img variant="top" src={item.img} className={styles.img} />
                       <Card.Body>
                           <Card.Title>{item.name}</Card.Title>
                           <Card.Text>
@@ -55,12 +56,11 @@ export function SearchResult (): JSX.Element {
                               <p>Habitaciones: {item.bedrooms}</p>
                               <p>Baños: {item.bathrooms}</p>
                           </Card.Text>
-                          <Button onClick={() => { router.push(`/product/s${item.id}`) }} variant="primary">Mas Info</Button>
+                          <Button className={styles.button}onClick={() => { router.push(`/product/s${item.id}`) }} variant="primary">Más Info</Button>
                       </Card.Body>
                   </Card>
-              ))
+                  ))
               }
-            
             </div>
         </div>
   )

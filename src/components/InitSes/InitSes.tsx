@@ -55,7 +55,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
         <CustomLogo onClick={() => { initSesionWithAuth('google') }} className={styles.googleLogo} src="./googleLogo.svg"></CustomLogo>
         <CustomLogo onClick={() => { initSesionWithAuth('github') }} className={styles.githubLogo} src="./githubLogo.svg"></CustomLogo>
       </div>
-      <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
+      <CustomButton className={styles.buttonReturn} onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
     </Form>
   )
 }

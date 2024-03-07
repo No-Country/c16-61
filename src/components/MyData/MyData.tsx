@@ -12,7 +12,7 @@ export default function MyData({ changesShow }): JSX.Element {
 
     <div className={styles.container} >
       <h4 className={styles.title}>Mis Datos</h4>
-      <Card className={styles.card} style={{ width: '30rem' }}>
+      <Card className={styles.card}>
         <Card.Img variant="top" src={user?.image} />
         <Card.Body>
           <Card.Title>{user?.name} </Card.Title>

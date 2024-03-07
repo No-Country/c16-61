@@ -59,7 +59,7 @@ export default function Register({ changesShow }): JSX.Element {
       </div>
       <Alert show key={'danger'} style={{ display: showState }} variant={'danger'}> Ya se encuentra registrado. </Alert>
       <CustomButton className={styles.button} type="submit" onClick={() => { }} text="Enviar"></CustomButton>
-      <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
+      <CustomButton className={styles.returnButton}onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
     </Form>
   )
 }

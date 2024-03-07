@@ -14,13 +14,12 @@ export async function Footer() {
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >
         <div className={styles.infOptions} >
-          <p>Buscar</p>
+          <p><Link href={'/search'} className={styles.link}>Buscar</Link></p>
           {
             user &&
             <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
           }
           <LogoutButton />
-          <p>©{new Date().getFullYear()} LyS</p>
         </div>
 
         <div className={styles.redes} >

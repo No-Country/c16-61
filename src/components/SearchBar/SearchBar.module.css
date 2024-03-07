@@ -1,4 +1,4 @@
-.section{
+.section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,19 +26,18 @@
   text-align: center;
   border-radius: 1rem;
   color: white;
-  background-color: #1e81b0;
+  background-color: #067bc2;
   border: none;
 }
 
 .searchButton:hover {
-  background-color: #1c729b;
+  background-color: #0368a7;
 }
 
 .filters {
   width: 100%;
   display: flex;
 }
-
 
 @media (width < 750px) {
   .filters {

@@ -5,29 +5,18 @@ import Card from 'react-bootstrap/Card'
 import style from './ItemDetail.module.css'
 import { useAllSearchPropertiesContext, useFeaturedPropertiesContext } from '@/app/context'
 
-
 export function ItemDetail(): JSX.Element {
-
-
   const id = useParams().id
   let item = {} as any
   let idWithoutLetter = id.slice(1)
-  let property; 
-  
-  if(id.slice(0,1) == "f"){
-    
+  let property
+  if (id.slice(0, 1) === 'f') {
     const context = useFeaturedPropertiesContext()
-     item = context.testArray.find((item: any) => {
-       return item.property.id === idWithoutLetter
-       
-      })
-      property = item.property
-      
-
-  }else if(id.slice(0,1) == "s"){
+    item = context.testArray.find((item: any) => { return item.property.id === idWithoutLetter })
+    property = item.property
+  } else if (id.slice(0, 1) === 's') {
     const context = useAllSearchPropertiesContext()
     item = context.allProperties.find((item: any) => {
-
       return item.id === idWithoutLetter
     })
     property = item
@@ -71,14 +60,8 @@ export function ItemDetail(): JSX.Element {
               alt="paradas-bus"
             />
             <span>{property.nearbyBusStops.length}</span>
-
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/starfilled.svg?alt=media&token=893b2383-fd89-4cf6-b492-9011ff74485e"
-              alt="rating"
-            />
-            <span>{item.rating}</span>
           </Card.Text>
-            <a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + property.name } >Contacto</a>
+            <button className={style.button}><a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + property.name } className={style.contact}>Contacto</a></button>
         </Card.Body>
       </Card>
     </article>

@@ -16,7 +16,7 @@
      target="_blank">
           <img  src="https://img.shields.io/badge/VER_DEMO-3378FF?style=for-the-badge&logo=vercel&logoColor=%23343B4E"/>
        </a>
-       <a href="https://www.figma.com/file/hS5Uy7yI0Q9lfAj1ZKbyRW/" target="_blank">
+       <a href="https://www.figma.com/file/C1jlTxqhs8ido9jxXZv441/C16-41?type=design&node-id=0%3A1&mode=design&t=M5Rwsn7E48u5OGZO-1" target="_blank">
           <img src="https://img.shields.io/badge/VER_DISE%C3%91O-3378FF?style=for-the-badge&logo=figma&logoColor=%23343B4E"/>
       </a>
       <a href="https://github.com/No-Country/c16-61/issues" 
@@ -59,6 +59,7 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 <!-- Tech Stack -->
 
 # Tecnologias Usadas
+
 ## Stack Front-End
 
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge)
@@ -66,12 +67,12 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 ## Stack Backend
 
-![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white) 
-
+![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white)
 
 ## Stack Diseño
 
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
 <!-- Ejecutar el proyecto localmente -->
 
 # Requisitos

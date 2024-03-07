@@ -31,14 +31,14 @@
 
 .navMail {
   margin: 0;
+  color: #f7567c;
 }
 
 .navItem .closeLink {
-  color: #e65b7c;
+  color: #f7567c;
   cursor: pointer;
 }
 
 .closeLink a:hover {
   color: #fff;
-
 }
