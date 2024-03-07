@@ -85,6 +85,7 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 ![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)
 ![Slack](https://img.shields.io/badge/Slack-%234A154B?style=for-the-badge&logo=Slack&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
 ![Google Meet](https://img.shields.io/badge/Google_Meet-FF0000?style=for-the-badge&logo=Google-Meet&logoColor=fff)
 ![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=WhatsApp&logoColor=fff)
 ![Github](https://img.shields.io/badge/github-00000?style=for-the-badge&logo=github&color=black)
