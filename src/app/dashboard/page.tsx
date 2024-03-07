@@ -20,7 +20,9 @@ const DashboardPage = async () => {
 
       <ButtonAddProperty />
 
-      <PropertiesGrid properties={properties} />
+      {properties.length > 0
+        ? (<PropertiesGrid properties={properties} />)
+        : (<h2>Proximamente</h2>)}
     </div>
   )
 }

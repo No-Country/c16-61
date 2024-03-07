@@ -2,22 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
   margin-bottom: 20px;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .propertiesGridItem {
-  width: calc(33.33% - 20px);
+  flex-basis: calc(33.33% - 20px); /* Adjusted for margin */
+  margin-bottom: 20px; /* Add margin bottom for spacing */
 }
 
 @media (max-width: 768px) {
   .propertiesGridItem {
-    width: calc(50% - 20px);
+    flex-basis: calc(49% - 10px); /* Adjusted for margin */
   }
 }
 
 @media (max-width: 480px) {
   .propertiesGridItem {
-    width: 100%;
+    flex-basis: calc(100%); /* Adjusted for margin */
   }
 }
