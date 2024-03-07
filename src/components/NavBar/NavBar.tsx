@@ -29,7 +29,7 @@ export function NavBar(): JSX.Element {
         {
           user
             ? <div className={styles.navbarMenu}>
-              <p>{`Hola ${user.name} `}</p>
+              <p className={styles.greet}>{`Hola ${user.name} `}</p>
               <CustomButton className={styles.buttonMenu} text="=" variant="primary" onClick={handleShow} ></CustomButton>
             </div>
             : <CustomButton className={styles.buttonMenu} text="=" variant="primary" onClick={handleShow} ></CustomButton>

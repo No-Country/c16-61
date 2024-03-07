@@ -1,3 +1,4 @@
+import styles from './editProperty.module.css'
 import fetchPropertyById from '@/properties/actions/get-property'
 import { FormEditProperty } from '@/properties/components/FormEditProperty'
 
@@ -13,7 +14,7 @@ const PropertyEditPage = async ({ params }: PropertyPageProps) => {
 
   return (
     <>
-      <div>PropertyEditPage</div>
+      <h1 className={styles.title}>Editar Propiedad</h1>
       <FormEditProperty property={property} />
     </>
   )

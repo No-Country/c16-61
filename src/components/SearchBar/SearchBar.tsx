@@ -60,7 +60,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
 
   const handleFilter = (event) => {
     event.preventDefault()
-    notify('Funciono')
     setShowFilter(!showFilter)
   }
 

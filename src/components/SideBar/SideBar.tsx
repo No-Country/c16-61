@@ -9,7 +9,7 @@ interface SideBarProps {
   show: boolean
   handleClose: () => void
 }
-export function SideBar (props: SideBarProps): JSX.Element {
+export function SideBar(props: SideBarProps): JSX.Element {
   const [showState, changesShow] = useState('NoUser')
 
   return (
@@ -19,23 +19,23 @@ export function SideBar (props: SideBarProps): JSX.Element {
         <Offcanvas.Body className={styles.sideBar}>
           {showState === 'NoUser'
             ? (
-            <OptionListComponent changesShow={changesShow}></OptionListComponent>
-              )
+              <OptionListComponent changesShow={changesShow}></OptionListComponent>
+            )
             : showState === 'InitSesion'
               ? (
-            <InitSesion changesShow={changesShow}></InitSesion>
-                )
+                <InitSesion changesShow={changesShow}></InitSesion>
+              )
               : showState === 'Register'
                 ? (
-            <Register changesShow={changesShow}></Register>
-                  )
+                  <Register changesShow={changesShow}></Register>
+                )
                 : showState === 'MyData'
                   ? (
-            <MyData changesShow={changesShow}></MyData>
-                    )
+                    <MyData changesShow={changesShow}></MyData>
+                  )
                   : (
-            <OptionListComponent changesShow={changesShow}></OptionListComponent>
-                    )}
+                    <OptionListComponent changesShow={changesShow}></OptionListComponent>
+                  )}
         </Offcanvas.Body>
       </div>
     </Offcanvas>

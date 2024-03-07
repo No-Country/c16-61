@@ -35,8 +35,10 @@
 
 .navItem .closeLink {
   color: #e65b7c;
+  cursor: pointer;
 }
 
 .closeLink a:hover {
   color: #fff;
+
 }
