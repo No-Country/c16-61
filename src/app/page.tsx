@@ -30,6 +30,10 @@ export default function HomePage(): JSX.Element {
         const data = await response.json()
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {
+          if(data[index] === undefined){
+            break
+          }
+            
           newArray.push(data[index])
         }
         contextFeaturedProperties.setTestArray(newArray)

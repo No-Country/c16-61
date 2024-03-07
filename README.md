@@ -41,9 +41,6 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 - Ver y Filtrar Propiedades: Todos los usuarios, independientemente de su rol, pueden ver y aplicar filtros avanzados para encontrar propiedades que se ajusten a sus necesidades específicas, desde la ubicación hasta el precio y características especiales.
 
-- Puntuar y Comentar Propiedades: Los usuarios comunes pueden dejar comentarios y puntuaciones en las propiedades, proporcionando feedback valioso para otros compradores potenciales y para la empresa privada.
-
-- Agregar Propiedades a Favoritos: Esta funcionalidad permite a los usuarios comunes guardar propiedades de interés en su perfil, facilitando el acceso rápido a sus opciones preferidas para futuras consultas o decisiones de compra.
 
 <br>
 

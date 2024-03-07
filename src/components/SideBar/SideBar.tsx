@@ -19,7 +19,7 @@ export function SideBar(props: SideBarProps): JSX.Element {
         <Offcanvas.Body className={styles.sideBar}>
           {showState === 'NoUser'
             ? (
-              <OptionListComponent changesShow={changesShow}></OptionListComponent>
+              <OptionListComponent closeMenu={props.handleClose} changesShow={changesShow}></OptionListComponent>
               )
             : showState === 'InitSesion'
               ? (
@@ -34,7 +34,7 @@ export function SideBar(props: SideBarProps): JSX.Element {
                     <MyData changesShow={changesShow}></MyData>
                     )
                   : (
-                    <OptionListComponent changesShow={changesShow}></OptionListComponent>
+                    <OptionListComponent closeMenu={props.handleClose} changesShow={changesShow}></OptionListComponent>
                     )}
         </Offcanvas.Body>
       </div>

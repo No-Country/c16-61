@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import styles from './OptionList.module.css'
 import { logout } from '@/auth'
 
-export function OptionListComponent({ changesShow }) {
+export function OptionListComponent({ changesShow, closeMenu }) {
   const { data: session } = useSession()
   const isAuthenticated = !!session?.user
 
@@ -27,7 +27,7 @@ export function OptionListComponent({ changesShow }) {
               {
                 isAuthenticated && session.user?.roles?.includes('admin') &&
                 <li className={`${styles.navItem}`}>
-                  <Link href='/dashboard'>
+                  <Link onClick={closeMenu} href='/dashboard'>
                     Propiedades
                   </Link>
                 </li>

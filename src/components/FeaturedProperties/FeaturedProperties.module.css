@@ -21,10 +21,16 @@
   margin: 20px;
   cursor: pointer;
 }
-
+.noProperties{
+  background-color: white;
+}
 @media (width < 860px) {
   .container {
     flex-direction: row;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .containerCarousel {
