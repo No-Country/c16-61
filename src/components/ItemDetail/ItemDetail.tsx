@@ -1,45 +1,37 @@
-import Link from 'next/link'
+'use client'
+
 import { useParams } from 'next/navigation'
-import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import style from './ItemDetail.module.css'
+import { useAllSearchPropertiesContext, useFeaturedPropertiesContext } from '@/app/context'
 
-import { useFeaturedPropertiesContext } from '@/app/context'
-/* interface Product {
-  nombre: string
-  precio: number
-  src: string
-  habitacion: number
-  baños: number
-  id: number
-  coverArea: string
-  rating: number
-  nearbyBusStop: number
-  nearbyPlaces: number
-} */
 
-export default function ItemDetail() {
-  const [show, setShow] = useState(false)
+export function ItemDetail(): JSX.Element {
 
-  const handleClose = () => { setShow(false) }
 
-  const context = useFeaturedPropertiesContext()
   const id = useParams().id
+  let item = {} as any
+  let idWithoutLetter = id.slice(1)
+  let property; 
+  
+  if(id.slice(0,1) == "f"){
+    
+    const context = useFeaturedPropertiesContext()
+     item = context.testArray.find((item: any) => {
+       return item.property.id === idWithoutLetter
+       
+      })
+      property = item.property
+      
 
-  const item: any = context.testArray.find((item: any) => {
-    return item.property.id === id
-  })
+  }else if(id.slice(0,1) == "s"){
+    const context = useAllSearchPropertiesContext()
+    item = context.allProperties.find((item: any) => {
 
-  const {
-    img,
-    bedrooms,
-    bathrooms,
-    price,
-    name,
-    coveredArea,
-    nearbyBusStops
-  } = item.property
+      return item.id === idWithoutLetter
+    })
+    property = item
+  }
 
   return (
     <article className={style.containerCard}>
@@ -49,36 +41,36 @@ export default function ItemDetail() {
             className={style.photoDetail}
             variant="left"
             alt="casa"
-            src={img}
+            src={property.img}
           />
         </div>
         <Card.Body className={style.cardBody}>
-          <Card.Title className={style.title}>{name} </Card.Title>
-          <h3>${price} </h3>
+          <Card.Title className={style.title}>{property.name} </Card.Title>
+          <h3>${property.price} </h3>
           <Card.Text className={style.icons}>
             <img
               src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bathfilled.svg?alt=media&token=78b7c5a4-289c-4c87-b0e4-f395f3c31add"
               alt="baños"
             />
-            <span>{bathrooms}</span>
+            <span>{property.bathrooms}</span>
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/bedfilled.svg?alt=media&token=81a6b35c-fc50-45be-a04f-c77da8110356"
               alt="habtaciones"
             />
-            <span>{bedrooms}</span>
+            <span>{property.bedrooms}</span>
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/coverarea.svg?alt=media&token=bfaf3f49-8f05-4826-8e45-0dc7eb55f8ce"
               alt="area-cubierta"
             />
-            <span>{coveredArea}km2</span>
+            <span>{property.coveredArea}km2</span>
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/busstop.svg?alt=media&token=bc4ff7fd-ad7d-4bfd-b4b1-2c8cdf1a4ff0"
               alt="paradas-bus"
             />
-            <span>{nearbyBusStops.length}</span>
+            <span>{property.nearbyBusStops.length}</span>
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/starfilled.svg?alt=media&token=893b2383-fd89-4cf6-b492-9011ff74485e"
@@ -86,8 +78,7 @@ export default function ItemDetail() {
             />
             <span>{item.rating}</span>
           </Card.Text>
-          {/* este es un link que envia un mail con el asunto de Estoy interesado en el item.name */}
-            <a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + name } >Contacto</a>
+            <a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + property.name } >Contacto</a>
         </Card.Body>
       </Card>
     </article>

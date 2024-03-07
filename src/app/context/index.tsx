@@ -30,7 +30,7 @@ export function AppWrapper ({ children }: Readonly<{
 export function useFeaturedPropertiesContext () {
   return useContext(FeaturedPropertiesContext)
 }
-export function useAllPropertiesContext () {
+export function useAllSearchPropertiesContext () {
   return useContext(AllPropertiesContext)
 }
 
