@@ -60,10 +60,11 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 # Team Leader
 
-|                                               <img src="https://ca.slack-edge.com/T02KS88FB0E-U06FKNP0Y3G-a0337d78a7d2-512" width=80>                                               |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --- |
-|                                                                                  Verónica Molinari                                                                                  |
-| <a href="https://www.linkedin.com/in/veronica-molinari/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |     |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U06FKNP0Y3G-a0337d78a7d2-512" width=80>|
+|:-:|
+| Verónica Molinari |
+|<a href="https://www.linkedin.com/in/veronica-molinari/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> ||
+
 
 <!-- Tech Stack -->
 
