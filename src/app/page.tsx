@@ -48,7 +48,7 @@ export default function HomePage(): JSX.Element {
   return (
     <div>
       <section className={styles.title} >
-        <h1>Imomubiales S.A</h1>
+        <h1>Imomubiales S.A.</h1>
         <SearchBar testArray={contextFeaturedProperties.testArray} router={router} />
       </section>
       <FeaturedProducts testArray={contextFeaturedProperties.testArray} />
