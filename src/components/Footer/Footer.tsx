@@ -2,13 +2,15 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import styles from './Footer.module.css'
 import { LogoutButton } from '..'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
 
-export async function Footer() {
-  const user = null
+export function Footer() {
+  const { data: session } = useSession()
+  const user = session?.user
 
   return (
     <footer className={styles.footer} >
@@ -17,9 +19,12 @@ export async function Footer() {
           <p>Buscar</p>
           {
             user &&
-            <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
+            <>
+              <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
+              <LogoutButton />
+            </>
           }
-          <LogoutButton />
+
           <p>©{new Date().getFullYear()} LyS</p>
         </div>
 
@@ -38,6 +43,6 @@ export async function Footer() {
       <div className={styles.grupo2}>
         <small>&copy; 2024 <b>No Country</b> | C16-61</small>
       </div>
-    </footer>
+    </footer >
   )
 }
