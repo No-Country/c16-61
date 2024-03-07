@@ -9,7 +9,8 @@ export default function MyData({ changesShow }): JSX.Element {
   const user = session?.user
 
   return (
-    <div className={styles.container}>
+
+    <div className={styles.container} >
       <h4 className={styles.title}>Mis Datos</h4>
       <Card className={styles.card} style={{ width: '30rem' }}>
         <Card.Img variant="top" src={user?.image} />
@@ -26,6 +27,6 @@ export default function MyData({ changesShow }): JSX.Element {
         </Card.Body>
       </Card>
 
-    </div>
+    </div >
   )
 }
