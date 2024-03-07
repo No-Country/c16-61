@@ -51,10 +51,21 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 # Contribuidores
 
-|                                                                                                                                    <img src="https://avatars.githubusercontent.com/u/88295111?v=4" width=50>                                                                                                                                     |                                                                                                                                           <img src="https://avatars.githubusercontent.com/u/135672598?v=4" width=50>                                                                                                                                            |                                                                                                                                <img src="https://avatars.githubusercontent.com/u/44903105?v=4" width=50>                                                                                                                                |                                                                                                                                 <img src="https://avatars.githubusercontent.com/u/104046552?v=4" width=50>                                                                                                                                  |                                                                                                                                   <img src="https://avatars.githubusercontent.com/u/129340427?v=4" width=50>                                                                                                                                    |
+| <img src="https://avatars.githubusercontent.com/u/88295111?v=4" width=50> | <img src="https://avatars.githubusercontent.com/u/135672598?v=4" width=50> | <img src="https://avatars.githubusercontent.com/u/44903105?v=4" width=50> | <img src="https://avatars.githubusercontent.com/u/104046552?v=4" width=50> | <img src="https://avatars.githubusercontent.com/u/129340427?v=4" width=50> |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                                                                                                                 **Luca Pattin**                                                                                                                                                                  |                                                                                                                                                                     **Sebastian Carbonell**                                                                                                                                                                     |                                                                                                                                                            **David Hilera**                                                                                                                                                             |                                                                                                                                                             **Stephany Acosta**                                                                                                                                                             |                                                                                                                                                                **David Manuel**                                                                                                                                                                 |
+| **Luca Pattin** <br><small>Full-Stack</small> | **Sebastian Carbonell** <br><small>Front-End</small> | **David Hilera** <br><small>Full-Stack</small> | **Stephany Acosta** <br><small>Front-End</small> | **David Manuel** <br><small>Front-End</small> |
 | <a href="https://github.com/lupattin"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/luca-pattin-30b1136b/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Scarbonell11"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/sebastian-carbonell-frontenddev/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/deiviiss"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/davidhilera/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/snag2003"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/stephany-acosta/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/davidmanueldev"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/davidmanuel01/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
+
+<!-- Team Leader -->
+
+# Team Leader
+
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U06FKNP0Y3G-a0337d78a7d2-512" width=80>|
+|:-:|
+| Verónica Molinari |
+|<a href="https://www.linkedin.com/in/veronica-molinari/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> ||
+
 
 <!-- Tech Stack -->
 
@@ -62,16 +73,35 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 ## Stack Front-End
 
-![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge)
+![Next](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+[![Git](https://img.shields.io/badge/git-00000?style=for-the-badge&logo=git&color=222)](https://git-scm.com/)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
 ## Stack Backend
 
 ![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white)
+![Next](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+[![Git](https://img.shields.io/badge/git-00000?style=for-the-badge&logo=git&color=222)](https://git-scm.com/)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-## Stack Diseño
+## Base de datos
+
+![PostgreSQL](https://img.shields.io/static/v1?style=for-the-badge&message=PostgreSQL&color=4169E1&logo=PostgreSQL&logoColor=FFFFFF&label=)
+
+## Diseño
 
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+## Gestión y comunicación
+
+![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)
+![Slack](https://img.shields.io/badge/Slack-%234A154B?style=for-the-badge&logo=Slack&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
+![Google Meet](https://img.shields.io/badge/Google_Meet-FF0000?style=for-the-badge&logo=Google-Meet&logoColor=fff)
+![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=WhatsApp&logoColor=fff)
+![Github](https://img.shields.io/badge/github-00000?style=for-the-badge&logo=github&color=black)
 
 <!-- Ejecutar el proyecto localmente -->
 
