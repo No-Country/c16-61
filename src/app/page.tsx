@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import { useFeaturedPropertiesContext, useAllPropertiesContext } from './context'
+import { useFeaturedPropertiesContext } from './context'
 import styles from './page.module.css'
 import FeaturedProducts from '@/components/FeaturedProperties/FeaturedProperties'
 import { SearchBar } from '@/components/SearchBar/SearchBar'
@@ -21,7 +21,6 @@ interface Product {
 
 export default function HomePage(): JSX.Element {
   const contextFeaturedProperties = useFeaturedPropertiesContext()
-  const contextAllProperties = useAllPropertiesContext()
   const router = useRouter()
 
   useEffect(() => {
@@ -29,9 +28,6 @@ export default function HomePage(): JSX.Element {
       try {
         const response = await fetch('http://localhost:3000/api/featured-properties')
         const data = await response.json()
-
-        console.log(data)
-
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {
           newArray.push(data[index])

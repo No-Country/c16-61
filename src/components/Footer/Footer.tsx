@@ -16,7 +16,7 @@ export function Footer() {
     <footer className={styles.footer} >
       <div className={styles.Conteiner} >
         <div className={styles.infOptions} >
-          <p>Buscar</p>
+          <p><Link href={'/search'} className={styles.link}>Buscar</Link></p>
           {
             user &&
             <>
@@ -26,6 +26,9 @@ export function Footer() {
           }
 
           <p>©{new Date().getFullYear()} LyS</p>
+
+          <LogoutButton />
+
         </div>
 
         <div className={styles.redes} >

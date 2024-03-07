@@ -45,7 +45,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
     }
 
     setQueryParams(paramsObject)
-    console.log('query params', queryParams)
 
     setShowResults(true)
     setShowFilter(true)
@@ -61,7 +60,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
 
   const handleFilter = (event) => {
     event.preventDefault()
-    notify('Funciono')
     setShowFilter(!showFilter)
   }
 

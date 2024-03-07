@@ -24,7 +24,8 @@ export function FormNewProperty() {
         <label htmlFor="price" className={styles.label}>Precio:</label>
         <input type="number" name="price" className={styles.input} />
 
-        {/* amenities */}
+        <div className={styles.fieldsets}>
+          {/* amenities */}
         <fieldset className={styles.fieldset}>
           <legend className={styles.label}>Comodidades:</legend>
           <div className={styles.checkbox}>
@@ -87,6 +88,7 @@ export function FormNewProperty() {
             <label htmlFor="paradaCentro">Parada de Centro</label>
           </div>
         </fieldset>
+        </div>
 
         {/* buttons */}
         <div>

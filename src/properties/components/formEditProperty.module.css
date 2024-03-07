@@ -22,6 +22,14 @@
   border-radius: 5px;
 }
 
+.fieldsets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 5%;
+}
+
 .fieldset {
   margin-top: 5%;
 }
@@ -37,7 +45,7 @@
 }
 
 .createButton {
-  background-color: #007bff;
+  background-color: #067bc2;
   color: #fff;
   padding: 8px 20px;
   border: none;

@@ -32,17 +32,18 @@
   text-align: center;
 }
 
-.link{
+.link {
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
-.link:hover{
+.link:hover {
   text-decoration: underline;
   text-decoration-color: blue;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
   text-decoration-skip-ink: none;
   text-decoration-style: solid;
-  
 }
 
 .twitter img,
@@ -62,7 +63,6 @@
 }
 
 .footer .grupo2 {
-  background-color: #0a1a2a;
   padding: 15px 10px;
   text-align: center;
   color: #fff;
@@ -77,7 +77,8 @@
     flex-direction: column;
     height: auto;
   }
-  .redes, .infOptions {
+  .redes,
+  .infOptions {
     display: flex;
     flex-direction: column;
     justify-content: center;

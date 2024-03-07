@@ -56,8 +56,16 @@
   font-size: 25px;
   width: 40px;
   padding: 0;
+  background-color: #067bc2;
 }
 
-.buttonNew button:hover {
-  background: #d35472;
+.buttonMenu:hover {
+  background: #f7567c;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .greet {
+    display: none;
+  }
 }

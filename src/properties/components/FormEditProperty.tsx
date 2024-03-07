@@ -63,7 +63,8 @@ export function FormEditProperty({ property }: EditPropertyProps) {
           defaultValue={property.price} className={styles.input}
         />
 
-        {/* amenities */}
+        <div className={styles.fieldsets}>
+           {/* amenities */}
         <fieldset className={styles.fieldset}>
           <legend className={styles.label}>Comodidades:</legend>
           <div className={styles.checkbox}>
@@ -180,9 +181,9 @@ export function FormEditProperty({ property }: EditPropertyProps) {
             <label htmlFor="paradaCentro">Parada de Centro</label>
           </div>
         </fieldset>
-
+        </div>
         {/* buttons */}
-        <div className={styles.fieldset}>
+        <div>
           <Link
             href='/dashboard'
           >

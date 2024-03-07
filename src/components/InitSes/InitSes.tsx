@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 import { useFormState } from 'react-dom'
 import styles from './InitSes.module.css'
 import { authenticate } from '@/auth'
+import { notify } from '@/notifications/Notification'
 import { CustomButton } from '@/UI/button/Button'
 import { CustomLogo } from '@/UI/logo/Logo'
 
@@ -14,8 +15,11 @@ export default function InitSesion({ changesShow }): JSX.Element {
 
   useEffect(() => {
     if (state === 'SuccessSignin') {
-      // cerrar sidebar
-      window.location.replace('/')
+      notify('Sesion iniciada con exito')
+      setTimeout(() => {
+        // cerrar sidebar
+        window.location.replace('/')
+      }, 1500)
     }
   }, [state])
 
@@ -51,7 +55,7 @@ export default function InitSesion({ changesShow }): JSX.Element {
         <CustomLogo onClick={() => { initSesionWithAuth('google') }} className={styles.googleLogo} src="./googleLogo.svg"></CustomLogo>
         <CustomLogo onClick={() => { initSesionWithAuth('github') }} className={styles.githubLogo} src="./githubLogo.svg"></CustomLogo>
       </div>
-      <CustomButton onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
+      <CustomButton className={styles.buttonReturn} onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
     </Form>
   )
 }

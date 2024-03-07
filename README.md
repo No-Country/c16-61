@@ -4,7 +4,7 @@
   <a href="https://github.com/No-Country/c16-61" target="_blank">
    <img src="./public/logoHeader.svg" alt="Banner" width="50%" />
   </a>
-  
+
   <br>
 <h1>Bienvenidos a Imomubiales</h1></div>
 <div>
@@ -16,7 +16,7 @@
      target="_blank">
           <img  src="https://img.shields.io/badge/VER_DEMO-3378FF?style=for-the-badge&logo=vercel&logoColor=%23343B4E"/>
        </a>
-       <a href="https://www.figma.com/file/hS5Uy7yI0Q9lfAj1ZKbyRW/" target="_blank">
+       <a href="https://www.figma.com/file/C1jlTxqhs8ido9jxXZv441/C16-41?type=design&node-id=0%3A1&mode=design&t=M5Rwsn7E48u5OGZO-1" target="_blank">
           <img src="https://img.shields.io/badge/VER_DISE%C3%91O-3378FF?style=for-the-badge&logo=figma&logoColor=%23343B4E"/>
       </a>
       <a href="https://github.com/No-Country/c16-61/issues" 
@@ -31,7 +31,49 @@
 
 # Acerca del Proyecto
 
-Imomubiales
+Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para una empresa privada, facilitando un entorno único para la compra y exploración de propiedades. Este proyecto digitaliza la experiencia inmobiliaria, permitiendo a los compradores interesados navegar, evaluar y expresar su interés en propiedades desde la comodidad de su hogar.
+
+- Landing Page: La puerta de entrada a nuestra selección de propiedades, donde destacamos las últimas ofertas, propiedades destacadas, y características únicas de nuestro catálogo, invitando a los usuarios a explorar más.
+
+- Registro: Ofrecemos dos roles de registro: usuarios comunes, que buscan comprar o explorar propiedades, y el rol de propietario/inmobiliaria, reservado exclusivamente para la empresa privada, permitiéndole gestionar y publicar listados de propiedades.
+
+- Publicar Propiedades: Como propietario/inmobiliaria, la empresa privada tiene la capacidad de listar nuevas propiedades, actualizar detalles, y presentar las ofertas más atractivas, manteniendo el catálogo fresco y atractivo.
+
+- Ver y Filtrar Propiedades: Todos los usuarios, independientemente de su rol, pueden ver y aplicar filtros avanzados para encontrar propiedades que se ajusten a sus necesidades específicas, desde la ubicación hasta el precio y características especiales.
+
+- Puntuar y Comentar Propiedades: Los usuarios comunes pueden dejar comentarios y puntuaciones en las propiedades, proporcionando feedback valioso para otros compradores potenciales y para la empresa privada.
+
+- Agregar Propiedades a Favoritos: Esta funcionalidad permite a los usuarios comunes guardar propiedades de interés en su perfil, facilitando el acceso rápido a sus opciones preferidas para futuras consultas o decisiones de compra.
+
+<br>
+
+<!-- Colaboradores | Contribuidores -->
+
+# Contribuidores
+
+|                                                                                                                                    <img src="https://avatars.githubusercontent.com/u/88295111?v=4" width=50>                                                                                                                                     |                                                                                                                                           <img src="https://avatars.githubusercontent.com/u/135672598?v=4" width=50>                                                                                                                                            |                                                                                                                                <img src="https://avatars.githubusercontent.com/u/44903105?v=4" width=50>                                                                                                                                |                                                                                                                                 <img src="https://avatars.githubusercontent.com/u/104046552?v=4" width=50>                                                                                                                                  |                                                                                                                                   <img src="https://avatars.githubusercontent.com/u/129340427?v=4" width=50>                                                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                                                 **Luca Pattin**                                                                                                                                                                  |                                                                                                                                                                     **Sebastian Carbonell**                                                                                                                                                                     |                                                                                                                                                            **David Hilera**                                                                                                                                                             |                                                                                                                                                             **Stephany Acosta**                                                                                                                                                             |                                                                                                                                                                **David Manuel**                                                                                                                                                                 |
+| <a href="https://github.com/lupattin"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/luca-pattin-30b1136b/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Scarbonell11"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/sebastian-carbonell-frontenddev/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/deiviiss"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/davidhilera/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/snag2003"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/stephany-acosta/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/davidmanueldev"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/davidmanuel01/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
+<!-- Tech Stack -->
+
+# Tecnologias Usadas
+
+## Stack Front-End
+
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+
+## Stack Backend
+
+![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white)
+
+## Stack Diseño
+
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+<!-- Ejecutar el proyecto localmente -->
 
 # Requisitos
 

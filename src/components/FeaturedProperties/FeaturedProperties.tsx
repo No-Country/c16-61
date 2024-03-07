@@ -11,9 +11,9 @@ export default function FeaturedProducts ({ testArray }): JSX.Element {
   return (
 
       <main className={style.container}>
-        <Carousel className={style.containerCarousel} >
+        <Carousel className={style.containerCarousel} data-bs-theme="dark" >
           {testArray.map((item, index) => (
-            <Carousel.Item key={index} onClick={() => { router.push(`/product/${item.property.id}`) }}>
+            <Carousel.Item key={index} onClick={() => { router.push(`/product/f${item.property.id}`) }}>
               <CarouselCard item={item.property}></CarouselCard>
             </Carousel.Item>
           ))}
