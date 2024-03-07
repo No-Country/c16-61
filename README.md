@@ -59,7 +59,19 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 <!-- Tech Stack -->
 
 # Tecnologias Usadas
+## Stack Front-End
 
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+
+## Stack Backend
+
+![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white) 
+
+
+## Stack Diseño
+
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 <!-- Ejecutar el proyecto localmente -->
 
 # Requisitos
