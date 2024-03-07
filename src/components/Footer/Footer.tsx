@@ -4,9 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import styles from './Footer.module.css'
-import { LogoutButton } from '..'
 import instagramLogo from '../../../public/images/instagram.svg'
 import twitterLogo from '../../../public/images/twitter.svg'
+import { logout } from '@/auth'
 
 export function Footer() {
   const { data: session } = useSession()
@@ -20,15 +20,12 @@ export function Footer() {
           {
             user &&
             <>
-              <p><Link href={'/profile'} style={{ color: 'white' }} >Mi perfil</Link></p>
-              <LogoutButton />
+              <p><Link href={'/profile'} className={styles.link} >Mi perfil</Link></p>
+              <p className={styles.link}>
+                <a onClick={async () => { await logout() }} >Cerrar Sesión</a>
+              </p>
             </>
           }
-
-          <p>©{new Date().getFullYear()} LyS</p>
-
-          <LogoutButton />
-
         </div>
 
         <div className={styles.redes} >
@@ -44,7 +41,7 @@ export function Footer() {
         </div>
       </div>
       <div className={styles.grupo2}>
-        <small>&copy; 2024 <b>No Country</b> | C16-61</small>
+        <small>&copy; {new Date().getFullYear()} <b>No Country</b> | C16-61</small>
       </div>
     </footer >
   )

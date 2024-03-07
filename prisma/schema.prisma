@@ -98,7 +98,7 @@ model PropertyRating {
   rating     Int // La calificación dada por el usuario
   comment    String? // Un comentario opcional sobre la propiedad
   propertyId String // Esto establece una relación con el modelo Property
-  property   Property  @relation(fields: [propertyId], references: [id])
+  property   Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
   userId     String // Esto establece una relación con el modelo User
   user       User      @relation(fields: [userId], references: [id])
   createdAt  DateTime  @default(now()) // Fecha de creación de la calificación
