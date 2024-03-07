@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { z } from 'zod'
 import { type CreateProperty } from '..'
+import { client } from '@/libs/algolia'
 import prisma from '@/libs/prisma'
 
 export const createProperty = async (
@@ -56,8 +57,15 @@ export const createProperty = async (
     return 'No se creo la propiedad, los datos no son válidos.'
   }
 
-  await prisma.property.create({
+  const property = await prisma.property.create({
     data
+  })
+
+  const index = client.initIndex('properties')
+
+  await index.saveObject({
+    objectID: property.id,
+    ...property
   })
 
   revalidatePath('/dashboard')

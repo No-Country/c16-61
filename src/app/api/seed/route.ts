@@ -10,6 +10,11 @@ export async function GET() {
   await prisma.user.deleteMany()
   await prisma.property.deleteMany()
 
+  // algolia
+  const index = client.initIndex('properties')
+  // clean Algolia index before starting seeding new data
+  await index.clearObjects()
+
   // Crear usuarios de prueba
   await prisma.user.createMany({
     data: [
@@ -190,8 +195,6 @@ export async function GET() {
   const ratingsData: CreatePropertyRating[] = []
 
   // Crear propiedaes en algolia tambien
-  const index = client.initIndex('properties')
-
   await index.saveObjects([
     {
       objectID: 'myID1',
