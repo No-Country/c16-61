@@ -10,7 +10,7 @@ export function SearchResult (): JSX.Element {
   const [propertiesArray, setPropertiesArray] = useState([]) as any
 
   const { queryParams } = useQueryParamsContext()
-  const { allProperties, setAllProperties } = useAllSearchPropertiesContext()
+  const { setAllProperties } = useAllSearchPropertiesContext()
   useEffect(() => {
     const fetching = async () => {
       if (Object.keys(queryParams).length == 1) {
@@ -43,7 +43,6 @@ export function SearchResult (): JSX.Element {
         <div className={styles.container}>
             <h3 className={styles.title}>Resultados</h3>
             <div className={styles.cardContainer}>
-              {/* aca quiero renderizar algo si propertiesArray.length == 0 y sino quiero renderizar otra cosa */}
               {
                 propertiesArray.length == 0 ? <p className={styles.noResults}>No se encontraron resultados</p>
                  : propertiesArray.map((item, index) => (
