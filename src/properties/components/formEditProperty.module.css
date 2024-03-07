@@ -22,6 +22,14 @@
   border-radius: 5px;
 }
 
+.fieldsets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 5%;
+}
+
 .fieldset {
   margin-top: 5%;
 }
