@@ -83,6 +83,8 @@ Nuestra plataforma de eCommerce inmobiliario está diseñada exclusivamente para
 
 ## Gestión y comunicación
 
+![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)
+
 <!-- Ejecutar el proyecto localmente -->
 
 # Requisitos
