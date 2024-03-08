@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs'
-import { NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { client } from '@/libs/algolia'
 import cloudinary from '@/libs/cloudinary'
 import prisma from '@/libs/prisma'
@@ -370,5 +371,6 @@ export async function GET() {
     })
   }
 
-  return NextResponse.json({ message: 'Executed seeded' })
+  revalidatePath('/')
+  redirect('/')
 }

@@ -1,16 +1,43 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { useFormState } from 'react-dom'
 import styles from './formNewProperty.module.css'
 import { createProperty } from '@/properties'
 
 export function FormNewProperty() {
   const [state, dispatch] = useFormState(createProperty, undefined)
+  const [image, setImage] = useState('')
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+
+    reader.onloadend = () => {
+      if (typeof reader.result === 'string') {
+        setImage(reader.result)
+      }
+    }
+
+    if (file instanceof Blob) {
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const target = event.target as HTMLFormElement
+    const formData = new FormData(target)
+    formData.append('img', image)
+
+    dispatch(formData)
+  }
 
   return (
     <>
-      <form action={dispatch} className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor="name" className={styles.label}>Nombre de la propiedad:</label>
         <input type="text" name="name" className={styles.input} />
         <label htmlFor="coveredArea" className={styles.label}>Area de la propiedad:</label>
@@ -25,7 +52,7 @@ export function FormNewProperty() {
         <input type="number" name="price" className={styles.input} />
 
         <label htmlFor="img" className={styles.label}>Imagen:</label>
-        <input name='img' type="file" />
+        <input name='imgFile' type="file" onChange={handleImageChange} />
 
         <div className={styles.fieldsets}>
           {/* amenities */}
