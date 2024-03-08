@@ -29,13 +29,13 @@ export default function Register({ changesShow }): JSX.Element {
       setTimeout(() => {
         changesShowStateDanger('none')
       }, 6000)
-    }else if(result.status === 201){
+    } else if (result.status === 201) {
       changesShowStateSuccess('block')
 
       setTimeout(() => {
         changesShowStateSuccess('none')
       }, 4000)
-      
+
       setTimeout(() => {
         changesShow()
       }, 4000)
@@ -71,7 +71,7 @@ export default function Register({ changesShow }): JSX.Element {
       <Alert show key={'success'} style={{ display: showStateSuccess }} variant={'success'}> Registro Exitoso. Por favor, inicie sesión. </Alert>
       <Alert show key={'danger'} style={{ display: showStateDanger }} variant={'danger'}> Ya se encuentra registrado. </Alert>
       <CustomButton className={styles.button} type="submit" onClick={() => { }} text="Enviar"></CustomButton>
-      <CustomButton className={styles.returnButton}onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
+      <CustomButton className={styles.returnButton} onClick={() => changesShow('NoUser')} text="Volver"></CustomButton>
     </Form>
   )
 }
