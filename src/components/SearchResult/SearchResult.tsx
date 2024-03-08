@@ -4,14 +4,18 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import styles from './SearchResult.module.css'
 import { useQueryParamsContext, useAllSearchPropertiesContext } from '@/app/context'
+import Spinner from 'react-bootstrap/Spinner';
 
 export function SearchResult (): JSX.Element {
   const router = useRouter()
-  const [propertiesArray, setPropertiesArray] = useState([]) as any
+  const [propertiesArray, setPropertiesArray] = useState([true]) as any
 
   const { queryParams } = useQueryParamsContext()
   const { setAllProperties } = useAllSearchPropertiesContext()
   useEffect(() => {
+
+    console.log(propertiesArray);
+    
     const fetching = async () => {
       if (Object.keys(queryParams).length === -1) {
         const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}`)
@@ -43,7 +47,13 @@ export function SearchResult (): JSX.Element {
         <div className={styles.container}>
             <h3 className={styles.title}>Resultados</h3>
             <div className={styles.cardContainer}>
-              {
+              { 
+                propertiesArray[0] === true ? (
+                  <div className={styles.spinnerContainer}> 
+                    <Spinner className={styles.spinner} animation="border" variant="primary" />
+                    <p>Cargando...</p>               
+                  </div>               
+                ) :
                 propertiesArray.length === 0
                   ? <p className={styles.noResults}>No se encontraron resultados</p>
                   : propertiesArray.map((item, index) => (

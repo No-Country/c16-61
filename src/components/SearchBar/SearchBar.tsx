@@ -67,10 +67,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
     <section className={styles.section}>
       <form className={styles.searchForm} onSubmit={(e) => { handleSearch(e) }}>
         <div>
-          {
-            showResults &&
-            <button className={styles.searchButton} onClick={clearSearch} type="button"><img src="https://firebasestorage.googleapis.com/v0/b/imomubiales1.appspot.com/o/x.svg?alt=media&token=bbb85fd1-6c06-469a-9418-7d282f51432b" alt="borrar" /></button>
-          }
           <input
             type="text"
             id='search'

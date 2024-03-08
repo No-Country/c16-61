@@ -27,6 +27,7 @@ export default function Search(router): JSX.Element {
 
   return (
     <div>
-      <SearchBar testArray={contextFeaturedProperties.testArray} router={router} initialShowResults={true}></SearchBar></div>
+      <SearchBar testArray={contextFeaturedProperties.testArray} router={router} initialShowResults={true}></SearchBar>
+    </div>
   )
 }
