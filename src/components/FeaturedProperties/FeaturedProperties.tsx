@@ -24,24 +24,3 @@ export default function FeaturedProducts({ testArray }): JSX.Element {
 
   )
 }
-
-
-{/* <main className={style.container}>
-      <Carousel className={style.containerCarousel} data-bs-theme="dark" >
-        {
-          testArray.length === 0 ? (
-            <Carousel.Item key={1} >
-              <CarouselCard item={{ empty: true }}></CarouselCard>
-            </Carousel.Item>
-
-          ) :
-            (
-              testArray.map((item, index) => (
-                <Carousel.Item key={index} onClick={() => { router.push(`/product/f${item.property.id}`) }}>
-                  <CarouselCard item={item.property}></CarouselCard>
-                </Carousel.Item>
-              ))
-            )
-        }
-      </Carousel>
-    </main> */}

@@ -15,6 +15,13 @@ export const createProperty = async (
   const fieldsWithMultipleValues = ['amenities', 'services', 'nearbyPlaces', 'nearbyBusStops']
 
   const formDataObj = Array.from(formData.entries()).reduce((acc, [key, value]) => {
+    const excludedFields = ['imgFile'] // Campos a excluir
+
+    // Si el campo actual está en excludedFields, saltarlo y continuar con el siguiente
+    if (excludedFields.includes(key)) {
+      return acc
+    }
+
     // Directly add the value for non-multivalued fields
     if (!fieldsWithMultipleValues.includes(key)) {
       acc[key] = value
@@ -31,32 +38,30 @@ export const createProperty = async (
   // format the data to be saved in the database
   // get image from formData
   const image = formData.get('img')
-  let imageUrl: string | null = null
 
-  if (!image) {
-    return 'No se creo la propiedad, los datos no son válidos.'
+  if (!image || typeof image !== 'string') {
+    return 'No se creo la propiedad, carga la imagen.'
   }
 
-  if (image instanceof File) {
-    const bytes = await image.arrayBuffer()
-    const buffer = Buffer.from(bytes)
+  // Convertir la imagen codificada en base64 a un Buffer
+  const base64Data = image.replace(/^data:image\/\w+;base64,/, '')
+  const buffer = Buffer.from(base64Data, 'base64')
 
-    // saved img to cloudinary
-    const result: { secure_url: string } = await new Promise((resolve, reject) => {
-      cloudinary.uploader.upload_stream({ folder: 'imomubiales' }, (err, result) => {
-        if (err) {
-          reject(err)
-        }
+  // saved img to cloudinary
+  const result: { secure_url: string } = await new Promise((resolve, reject) => {
+    cloudinary.uploader.upload_stream({ folder: 'imomubiales' }, (err, result) => {
+      if (err) {
+        reject(err)
+      }
 
-        if (result) {
-          resolve({ secure_url: result.secure_url })
-        }
-      }).end(buffer)
-    })
+      if (result) {
+        resolve({ secure_url: result.secure_url })
+      }
+    }).end(buffer)
+  })
 
-    // get the url of the image
-    imageUrl = result.secure_url
-  }
+  // get the url of the image
+  const imageUrl = result.secure_url
 
   const data: CreateProperty = {
     ...formDataObj,

@@ -6,23 +6,22 @@ import styles from './page.module.css'
 import FeaturedProducts from '@/components/FeaturedProperties/FeaturedProperties'
 import { SearchBar } from '@/components/SearchBar/SearchBar'
 
-interface Product {
-  nombre: string
-  precio: number
-  src: string
-  habitacion: number
-  baños: number
-  id: number
-  coverArea: string
-  rating: number
-  nearbyBusStop: number
-  nearbyPlaces: number
-}
+// interface Product {
+//   nombre: string
+//   precio: number
+//   src: string
+//   habitacion: number
+//   baños: number
+//   id: number
+//   coverArea: string
+//   rating: number
+//   nearbyBusStop: number
+//   nearbyPlaces: number
+// }
 
 export default function HomePage(): JSX.Element {
   const contextFeaturedProperties = useFeaturedPropertiesContext()
   const router = useRouter()
-  
 
   useEffect(() => {
     const fetchDatos = async () => {
@@ -31,10 +30,10 @@ export default function HomePage(): JSX.Element {
         const data = await response.json()
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {
-          if(data[index] === undefined){
+          if (data[index] === undefined) {
             break
           }
-            
+
           newArray.push(data[index])
         }
         contextFeaturedProperties.setTestArray(newArray)
