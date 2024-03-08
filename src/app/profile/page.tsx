@@ -18,7 +18,7 @@ const ProfilePage = async () => {
         <div style={{ marginRight: '10px', padding: '10px' }}>
           <Image src={userImage} alt={userName} width={100} height={100} style={{ marginBottom: '20px' }} />
           <p>Nombre: {userName}</p>
-          <p>Email: {user.email}</p>
+          <p>Correo: {user.email}</p>
           <button type='button' style={{ padding: '5px' }}>
             <LogoutButton />
           </button>
