@@ -8,7 +8,7 @@ import { useAllSearchPropertiesContext, useFeaturedPropertiesContext } from '@/a
 export function ItemDetail(): JSX.Element {
   const id = useParams().id
   let item = {} as any
-  let idWithoutLetter = id.slice(1)
+  const idWithoutLetter = id.slice(1)
   let property
   if (id.slice(0, 1) === 'f') {
     const context = useFeaturedPropertiesContext()
@@ -61,7 +61,7 @@ export function ItemDetail(): JSX.Element {
             />
             <span>{property.nearbyBusStops.length}</span>
           </Card.Text>
-            <button className={style.button}><a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + property.name } className={style.contact}>Contacto</a></button>
+          <button className={style.button}><a href={'mailto:imomubiales@gmail.com?subject=Estoy%20interesado%20en%20la%20propiedad%20' + property.name} className={style.contact}>Contacto</a></button>
         </Card.Body>
       </Card>
     </article>

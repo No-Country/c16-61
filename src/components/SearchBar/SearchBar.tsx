@@ -6,7 +6,6 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import styles from './SearchBar.module.css'
 import { useQueryParamsContext } from '@/app/context'
 import { SearchResult } from '@/components/SearchResult/SearchResult'
-import { notify } from '@/notifications/Notification'
 
 interface SearchBarProps {
   testArray: any[]
@@ -18,7 +17,7 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
   const [showResults, setShowResults] = useState(initialShowResults)
   const [showFilter, setShowFilter] = useState(true)
 
-  const { queryParams, setQueryParams } = useQueryParamsContext()
+  const { setQueryParams } = useQueryParamsContext()
 
   const handleSearch = async (event) => {
     event.preventDefault()
@@ -51,11 +50,6 @@ export function SearchBar({ router, initialShowResults = false }: SearchBarProps
     if (window.document.location.pathname === '/') {
       router.push('/search')
     }
-  }
-
-  const clearSearch = (event) => {
-    event.preventDefault()
-    setShowResults(false)
   }
 
   const handleFilter = (event) => {
