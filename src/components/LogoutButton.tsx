@@ -15,7 +15,7 @@ export const LogoutButton = () => {
   return (
     <p
       onClick={async () => { await logout() }}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', margin: '0' }}
     >
       <span >Cerrar sesión</span>
     </p>
