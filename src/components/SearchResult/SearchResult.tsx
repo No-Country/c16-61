@@ -18,12 +18,12 @@ export function SearchResult (): JSX.Element {
     
     const fetching = async () => {
       if (Object.keys(queryParams).length === -1) {
-        const results = await fetch(`http://localhost:3000/api/search-properties?query=${queryParams.query}`)
+        const results = await fetch(`/api/search-properties?query=${queryParams.query}`)
         const data = await results.json()
         setPropertiesArray(data)
         setAllProperties(data)
       } else {
-        let fetchString = 'http://localhost:3000/api/search-properties?'
+        let fetchString = '/api/search-properties?'
         const params = Object.keys(queryParams)
         /* quiero iterar las propiedades de prueba */
         for (let index = 0; index < params.length; index++) {

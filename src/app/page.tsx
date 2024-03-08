@@ -22,11 +22,12 @@ interface Product {
 export default function HomePage(): JSX.Element {
   const contextFeaturedProperties = useFeaturedPropertiesContext()
   const router = useRouter()
+  
 
   useEffect(() => {
     const fetchDatos = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/featured-properties')
+        const response = await fetch('/api/featured-properties')
         const data = await response.json()
         const newArray = [] as any
         for (let index = 0; index < 3; index++) {

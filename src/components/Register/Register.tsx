@@ -14,7 +14,7 @@ export default function Register({ changesShow }): JSX.Element {
     const email = event.target.inputEmail.value
     const password = event.target.inputPassword5.value
 
-    const result = await fetch('http://localhost:3000/api/users', {
+    const result = await fetch('/api/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
